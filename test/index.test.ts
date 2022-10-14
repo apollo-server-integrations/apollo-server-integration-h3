@@ -4,7 +4,7 @@ import { testFunction } from '../src'
 describe('packageName', () => {
   const tests = [
     { input: 'foo', output: 'Hello foo' },
-    { input: 'bar', output: 'Hello bar' }
+    { input: 'bar', output: 'Hello bar' },
   ]
 
   for (const test of tests) {
