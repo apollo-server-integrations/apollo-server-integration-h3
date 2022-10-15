@@ -6,8 +6,30 @@ name: release
 jobs:
   release-pr:
     runs-on: ubuntu-latest
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
     steps:
       - uses: google-github-actions/release-please-action@v3
+        id: release
         with:
           release-type: node
           package-name: '@as-integrations/h3'
+
+  publish_npm:
+    name: Publish to npm
+    runs-on: ubuntu-latest
+    needs: [release-pr]
+    if: needs.release-pr.outputs.release_created
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+          registry-url: 'https://registry.npmjs.org'
+          cache: 'npm'
+      - name: Install dependencies
+        run: pnpm install
+      - name: Publish to npm
+        run: pnpm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
