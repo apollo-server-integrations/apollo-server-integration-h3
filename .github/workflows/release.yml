@@ -31,6 +31,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: Publish to npm
-        run: pnpm publish
+        run: pnpm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
