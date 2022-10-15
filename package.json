@@ -1,6 +1,6 @@
 {
   "name": "@as-integrations/h3",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "An Apollo Server integration for use with h3 or Nuxt",
   "repository": "apollo-server-integrations/apollo-server-integration-h3",
   "license": "MIT",
