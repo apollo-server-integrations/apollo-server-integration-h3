@@ -4,7 +4,6 @@ import type {
   ContextFunction,
   HTTPGraphQLRequest,
 } from '@apollo/server'
-import type { WithRequired } from '@apollo/utils.withrequired'
 import {
   eventHandler,
   EventHandler,
@@ -17,6 +16,7 @@ import {
 } from 'h3'
 import type { IncomingHttpHeaders } from 'http'
 
+type WithRequired<T, K extends keyof T> = T & Required<Pick<T, K>>
 export interface H3ContextFunctionArgument {
   event: H3Event
 }
