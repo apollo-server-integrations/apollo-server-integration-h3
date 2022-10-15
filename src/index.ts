@@ -10,9 +10,9 @@ import {
   getHeaders,
   H3Event,
   HTTPMethod,
-  readBody,
   isMethod,
   setHeaders,
+  readRawBody,
 } from 'h3'
 import type { IncomingHttpHeaders } from 'http'
 
@@ -58,18 +58,29 @@ export function startServerAndCreateH3Handler<TContext extends BaseContext>(
       return null
     }
 
-    const { body, headers, status } = await server.executeHTTPGraphQLRequest({
-      httpGraphQLRequest: await toGraphqlRequest(event),
-      context: () => contextFunction({ event }),
-    })
+    try {
+      const graphqlRequest = await toGraphqlRequest(event)
+      const { body, headers, status } = await server.executeHTTPGraphQLRequest({
+        httpGraphQLRequest: graphqlRequest,
+        context: () => contextFunction({ event }),
+      })
 
-    if (body.kind === 'chunked') {
-      throw new Error('Incremental delivery not implemented')
+      if (body.kind === 'chunked') {
+        throw new Error('Incremental delivery not implemented')
+      }
+
+      setHeaders(event, Object.fromEntries(headers))
+      event.res.statusCode = status || 200
+      return body.string
+    } catch (error) {
+      if (error instanceof SyntaxError) {
+        // This is what the apollo test suite expects
+        event.res.statusCode = 400
+        return error.message
+      } else {
+        throw error
+      }
     }
-
-    setHeaders(event, Object.fromEntries(headers))
-    event.res.statusCode = status || 200
-    return body.string
   })
 }
 
@@ -101,9 +112,12 @@ function normalizeQueryString(url: string | undefined): string {
   return url.split('?')[1] || ''
 }
 
-async function normalizeBody(event: H3Event): Promise<string | undefined> {
+async function normalizeBody(event: H3Event): Promise<any> {
   const PayloadMethods: HTTPMethod[] = ['PATCH', 'POST', 'PUT', 'DELETE']
   if (isMethod(event, PayloadMethods)) {
-    return await readBody(event)
+    // We cannot use 'readBody' here because it will hide errors in the json parsing
+    const body = await readRawBody(event)
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+    return JSON.parse(typeof body === 'string' ? body : body.toString())
   }
 }
