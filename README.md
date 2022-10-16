@@ -14,10 +14,10 @@ This package allows you to easily integrate [Apollo Server](https://www.apollogr
 npm install @apollo/server graphql @as-integrations/h3
 
 # yarn
-yarn install @apollo/server graphql @as-integrations/h3
+yarn add @apollo/server graphql @as-integrations/h3
 
 # pnpm
-pnpm install @apollo/server graphql @as-integrations/h3
+pnpm add @apollo/server graphql @as-integrations/h3
 ```
 
 ## Usage with Nuxt v3
