@@ -21,6 +21,31 @@ jobs:
               { "type": "chore", "section": "🧹 Miscellaneous", "hidden": false }
             ]
 
+      # Format changelog, workaround for https://github.com/google-github-actions/release-please-action/issues/542
+      # Taken from https://github.com/remarkablemark/release-please-extra-files-demo/blob/master/.github/workflows/release-please.yml
+      - uses: actions/checkout@v3
+        if: ${{ steps.release.outputs.pr }}
+        with:
+          ref: ${{ fromJson(steps.release.outputs.pr).headBranchName }}
+
+      - name: Configure Git user
+        if: ${{ steps.release.outputs.pr }}
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git --no-pager show --name-only
+
+      - name: Format CHANGELOG.md
+        if: ${{ steps.release.outputs.pr }}
+        run: npx prettier --write CHANGELOG.md
+
+      - name: Commit and push
+        if: ${{ steps.release.outputs.pr }}
+        run: |
+          git add CHANGELOG.md
+          git commit -m 'chore: Format CHANGELOG.md with Prettier' --no-verify
+          git push
+
   publish_npm:
     name: Publish to npm
     runs-on: ubuntu-latest
