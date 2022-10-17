@@ -2,7 +2,7 @@ import {
   CreateServerForIntegrationTestsOptions,
   defineIntegrationTestSuite,
 } from '@apollo/server-integration-testsuite'
-import { createApp } from 'h3'
+import { createApp, toNodeListener } from 'h3'
 import { ApolloServer, ApolloServerOptions, BaseContext } from '@apollo/server'
 import { startServerAndCreateH3Handler } from '../src'
 import { createServer, Server } from 'http'
@@ -31,8 +31,7 @@ defineIntegrationTestSuite(
       })
     )
 
-    // eslint-disable-next-line @typescript-eslint/no-misused-promises
-    const httpServer = createServer(app)
+    const httpServer = createServer(toNodeListener(app))
     await new Promise<void>((resolve) => {
       httpServer.listen({ port: 0 }, resolve)
     })

@@ -43,7 +43,7 @@ export default startServerAndCreateH3Handler(apollo, {
 Create and configure an instance of Apollo Server as described in the [documentation](https://www.apollographql.com/docs/apollo-server/getting-started#step-6-create-an-instance-of-apolloserver) and then register it as a route handler in your `h3` application.
 
 ```js
-import { createApp } from 'h3'
+import { createApp, toNodeListener } from 'h3'
 import { ApolloServer } from '@apollo/server'
 import { startServerAndCreateH3Handler } from '@as-integrations/h3'
 
