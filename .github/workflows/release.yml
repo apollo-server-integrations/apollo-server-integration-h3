@@ -14,6 +14,12 @@ jobs:
         with:
           release-type: node
           token: ${{ secrets.RELEASE_PR_TOKEN }}
+          changelog-types: |-
+            [
+              { "type": "feat", "section": "🔖 Features", "hidden": false },
+              { "type": "fix", "section": "🐛 Bug Fixes", "hidden": false },
+              { "type": "chore", "section": "🧹 Miscellaneous", "hidden": false }
+            ]
 
   publish_npm:
     name: Publish to npm
