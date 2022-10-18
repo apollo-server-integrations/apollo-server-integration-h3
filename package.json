@@ -30,23 +30,23 @@
     "release": "pnpm test && standard-version && git push --follow-tags && pnpm publish"
   },
   "peerDependencies": {
-    "@apollo/server": "^4.0.0",
-    "h3": "^0.8.1"
+    "@apollo/server": "^4.0.1",
+    "h3": "^0.8.3"
   },
   "devDependencies": {
-    "@apollo/server": "^4.0.0",
-    "@apollo/server-integration-testsuite": "^4.0.0",
-    "@apollo/utils.withrequired": "^1.0.0",
+    "@apollo/server": "^4.0.1",
+    "@apollo/server-integration-testsuite": "^4.0.1",
+    "@apollo/utils.withrequired": "^1.0.1",
     "@jest/globals": "^29.2.0",
     "@nuxtjs/eslint-config-typescript": "^11.0.0",
-    "@typescript-eslint/eslint-plugin": "^5.40.0",
-    "@typescript-eslint/parser": "^5.40.0",
+    "@typescript-eslint/eslint-plugin": "^5.40.1",
+    "@typescript-eslint/parser": "^5.40.1",
     "@vitest/coverage-c8": "^0.24.3",
     "eslint": "^8.25.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-unused-imports": "^2.0.0",
     "graphql": "^16.6.0",
-    "h3": "^0.8.1",
+    "h3": "^0.8.3",
     "jest": "^29.2.0",
     "prettier": "^2.7.1",
     "standard-version": "^9.5.0",
