@@ -25,7 +25,7 @@
     "test:integration": "jest",
     "lint": "pnpm lint:eslint && pnpm lint:prettier",
     "lint:eslint": "eslint --ext .ts,.js,.vue,.graphql --ignore-path .gitignore --report-unused-disable-directives .",
-    "lint:prettier": "prettier --check --ignore-path .gitignore .",
+    "lint:prettier": "prettier --check --ignore-path .gitignore . '!pnpm-lock.yaml'",
     "prepack": "unbuild",
     "release": "pnpm test && standard-version && git push --follow-tags && pnpm publish"
   },
