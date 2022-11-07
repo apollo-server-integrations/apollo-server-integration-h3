@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.1.2](https://github.com/apollo-server-integrations/apollo-server-integration-h3/compare/v1.1.1...v1.1.2) (2022-11-07)
+
+Only changes to build infrastructure.
+
 ## [1.1.1](https://github.com/apollo-server-integrations/apollo-server-integration-h3/compare/v1.1.0...v1.1.1) (2022-11-07)
 
 ### 🧹 Miscellaneous
