@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.3](https://github.com/apollo-server-integrations/apollo-server-integration-h3/compare/v1.1.2...v1.1.3) (2022-11-07)
+
+### 🧹 Miscellaneous
+
+- provide npm auth token via npmrc ([ef0833b](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/ef0833b9030525dd166522e100d3ff396cbcee05))
+- specify correct repo in package.json ([1554e4a](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/1554e4adbcbc9cf87397e9b86a37e7c7ae32d51d))
+
 ## [1.1.2](https://github.com/apollo-server-integrations/apollo-server-integration-h3/compare/v1.1.1...v1.1.2) (2022-11-07)
 
 Only changes to build infrastructure.
