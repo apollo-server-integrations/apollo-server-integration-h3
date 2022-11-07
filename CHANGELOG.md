@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.2](https://github.com/apollo-server-integrations/apollo-server-integration-h3/compare/v1.1.1...v1.1.2) (2022-11-07)
+
+
+### 🧹 Miscellaneous
+
+* use npm_config__authtoken for publishing ([b356665](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/b356665e7a32ae9d0c387f9d442a295e6c79ee0e))
+
 ## [1.1.1](https://github.com/apollo-server-integrations/apollo-server-integration-h3/compare/v1.1.0...v1.1.1) (2022-11-07)
 
 ### 🧹 Miscellaneous
