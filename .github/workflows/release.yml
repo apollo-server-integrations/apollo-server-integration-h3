@@ -63,4 +63,4 @@ jobs:
       - name: Publish to npm
         run: pnpm publish --access public
         env:
-          npm_config_//registry.npmjs.org/: _authToken=${{ secrets.NPM_TOKEN }}
+          npm_config__authtoken: ${{ secrets.NPM_TOKEN }}
