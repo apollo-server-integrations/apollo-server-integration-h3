@@ -38,7 +38,7 @@
     "@apollo/server-integration-testsuite": "^4.1.1",
     "@apollo/utils.withrequired": "^1.0.1",
     "@jest/globals": "^29.2.2",
-    "@nuxtjs/eslint-config-typescript": "^11.0.0",
+    "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@typescript-eslint/eslint-plugin": "^5.42.0",
     "@typescript-eslint/parser": "^5.42.0",
     "@vitest/coverage-c8": "^0.24.5",
