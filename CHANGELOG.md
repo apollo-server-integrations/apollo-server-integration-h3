@@ -2,15 +2,14 @@
 
 ## [1.1.4](https://github.com/apollo-server-integrations/apollo-server-integration-h3/compare/v1.1.3...v1.1.4) (2022-11-20)
 
-
 ### 🧹 Miscellaneous
 
-* **deps:** update devdependency @apollo/utils.withrequired to v2 ([#23](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/23)) ([6a8df13](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/6a8df1392aa5f3c0bc475babb0a494f6d4fa1c70))
-* **deps:** update devdependency @nuxtjs/eslint-config-typescript to v12 ([#22](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/22)) ([079544c](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/079544c8ffd96618a6cac81090ec924ed7580895))
-* **deps:** update devdependency unbuild to v1 ([#21](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/21)) ([67b271f](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/67b271f7db44f52404d16faac112d585afb2e37d))
-* **deps:** update peerdependency h3 to v1 ([#19](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/19)) ([6581693](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/6581693f17e7d1fddc41ea568136f1045f7cad13))
-* **deps:** widen admissable version range for h3 ([0ce0ce4](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/0ce0ce4dfb88abff4d9cb431e0c073c7272552e4))
-* use renovate widenPeerDependencies preset ([97694bf](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/97694bf7f0edf667064a924d7596a742e0abbe2f))
+- **deps:** update devdependency @apollo/utils.withrequired to v2 ([#23](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/23)) ([6a8df13](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/6a8df1392aa5f3c0bc475babb0a494f6d4fa1c70))
+- **deps:** update devdependency @nuxtjs/eslint-config-typescript to v12 ([#22](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/22)) ([079544c](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/079544c8ffd96618a6cac81090ec924ed7580895))
+- **deps:** update devdependency unbuild to v1 ([#21](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/21)) ([67b271f](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/67b271f7db44f52404d16faac112d585afb2e37d))
+- **deps:** update peerdependency h3 to v1 ([#19](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/19)) ([6581693](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/6581693f17e7d1fddc41ea568136f1045f7cad13))
+- **deps:** widen admissable version range for h3 ([0ce0ce4](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/0ce0ce4dfb88abff4d9cb431e0c073c7272552e4))
+- use renovate widenPeerDependencies preset ([97694bf](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/97694bf7f0edf667064a924d7596a742e0abbe2f))
 
 ## [1.1.3](https://github.com/apollo-server-integrations/apollo-server-integration-h3/compare/v1.1.2...v1.1.3) (2022-11-07)
 
