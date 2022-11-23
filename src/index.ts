@@ -16,8 +16,8 @@ import {
   getRequestHeader,
 } from 'h3'
 import type { IncomingHttpHeaders } from 'http'
+import type { WithRequired } from '@apollo/utils.withrequired'
 
-type WithRequired<T, K extends keyof T> = T & Required<Pick<T, K>>
 export interface H3ContextFunctionArgument {
   event: H3Event
 }
