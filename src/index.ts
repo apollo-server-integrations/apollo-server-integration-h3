@@ -118,7 +118,7 @@ async function normalizeBody(event: H3Event): Promise<unknown> {
   if (isMethod(event, PayloadMethods)) {
     // We cannot use 'readBody' here because it will hide errors in the json parsing
     const body = await readRawBody(event)
-    if (getRequestHeader(event, 'content-type') === 'application/json') {
+    if (getRequestHeader(event, 'content-type')?.includes('application/json')) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-return
       return body ? JSON.parse(body) : {}
     } else {
