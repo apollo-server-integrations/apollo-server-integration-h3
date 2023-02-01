@@ -113,17 +113,16 @@ function normalizeQueryString(url: string | undefined): string {
   return url.split('?')[1] || ''
 }
 
-async function normalizeBody(event: H3Event): Promise<any> {
+async function normalizeBody(event: H3Event): Promise<unknown> {
   const PayloadMethods: HTTPMethod[] = ['PATCH', 'POST', 'PUT', 'DELETE']
   if (isMethod(event, PayloadMethods)) {
     // We cannot use 'readBody' here because it will hide errors in the json parsing
     const body = await readRawBody(event)
-    const content = typeof body === 'string' ? body : body?.toString()
-    if (getRequestHeader(event, 'content-type') === 'application/json') {
+    if (getRequestHeader(event, 'content-type')?.includes('application/json')) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-      return content ? JSON.parse(content) : {}
+      return body ? JSON.parse(body) : {}
     } else {
-      return content
+      return body
     }
   }
 }

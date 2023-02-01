@@ -5,7 +5,9 @@
 [![Github Actions][github-actions-src]][github-actions-href]
 [![Codecov][codecov-src]][codecov-href]
 
-This package allows you to easily integrate [Apollo Server](https://www.apollographql.com/docs/apollo-server/) with your [h3](https://github.com/unjs/h3) or [nuxt](v3.nuxtjs.org) application.
+This package allows you to easily integrate [Apollo Server](https://www.apollographql.com/docs/apollo-server/) with your [h3](https://github.com/unjs/h3) or [Nuxt 3](v3.nuxtjs.org) application.
+
+> For defining a GraphQL server in Nuxt 3, you may want to have a look at the [GraphQL server toolkit Nuxt module](https://github.com/tobiasdiez/nuxt-graphql-server).
 
 ## Installation
 
