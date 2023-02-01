@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.5](https://github.com/apollo-server-integrations/apollo-server-integration-h3/compare/v1.1.4...v1.1.5) (2023-02-01)
+
+
+### 🧹 Miscellaneous
+
+* **deps:** update all non-major dependencies ([#18](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/18)) ([a4dbc4d](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/a4dbc4d319235e3959cdb0ac45ec46fad5f8e3df))
+
 ## [1.1.4](https://github.com/apollo-server-integrations/apollo-server-integration-h3/compare/v1.1.3...v1.1.4) (2022-11-20)
 
 ### 🧹 Miscellaneous
