@@ -8,8 +8,8 @@ devDependencies:
     specifier: ^4.4.1
     version: 4.4.1(@jest/globals@29.4.3)(graphql@16.6.0)(jest@29.4.3)
   '@apollo/utils.withrequired':
-    specifier: ^2.0.0
-    version: 2.0.0
+    specifier: ^3.0.0
+    version: 3.0.0
   '@jest/globals':
     specifier: ^29.4.3
     version: 29.4.3
@@ -329,6 +329,11 @@ packages:
   /@apollo/utils.withrequired@2.0.0:
     resolution: {integrity: sha512-+djpTu6AEE/A1etryZs9tmXRyDY6XXGe3G29MS/LB09uHq3pcl3n4Q5lvDTL5JWKuJixrulg5djePLDAooG8dQ==}
     engines: {node: '>=14'}
+    dev: true
+
+  /@apollo/utils.withrequired@3.0.0:
+    resolution: {integrity: sha512-aaxeavfJ+RHboh7c2ofO5HHtQobGX4AgUujXP4CXpREHp9fQ9jPi6K9T1jrAKe7HIipoP0OJ1gd6JamSkFIpvA==}
+    engines: {node: '>=16'}
     dev: true
 
   /@apollographql/graphql-playground-html@1.6.29:

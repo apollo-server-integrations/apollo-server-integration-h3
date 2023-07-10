@@ -36,7 +36,7 @@
   "devDependencies": {
     "@apollo/server": "^4.4.1",
     "@apollo/server-integration-testsuite": "^4.4.1",
-    "@apollo/utils.withrequired": "^2.0.0",
+    "@apollo/utils.withrequired": "^3.0.0",
     "@jest/globals": "^29.4.3",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
