@@ -4,6 +4,7 @@ import type {
   ContextFunction,
   HTTPGraphQLRequest,
 } from '@apollo/server'
+import { HeaderMap } from '@apollo/server'
 import {
   eventHandler,
   EventHandler,
@@ -94,8 +95,8 @@ async function toGraphqlRequest(event: H3Event): Promise<HTTPGraphQLRequest> {
   }
 }
 
-function normalizeHeaders(headers: IncomingHttpHeaders): Map<string, string> {
-  const headerMap = new Map<string, string>()
+function normalizeHeaders(headers: IncomingHttpHeaders): HeaderMap {
+  const headerMap = new HeaderMap()
   for (const [key, value] of Object.entries(headers)) {
     if (Array.isArray(value)) {
       headerMap.set(key, value.join(','))
