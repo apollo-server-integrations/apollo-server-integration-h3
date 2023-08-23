@@ -29,15 +29,15 @@ export interface H3HandlerOptions<TContext extends BaseContext> {
 
 export function startServerAndCreateH3Handler(
   server: ApolloServer<BaseContext>,
-  options?: H3HandlerOptions<BaseContext>
+  options?: H3HandlerOptions<BaseContext>,
 ): EventHandler
 export function startServerAndCreateH3Handler<TContext extends BaseContext>(
   server: ApolloServer<TContext>,
-  options: WithRequired<H3HandlerOptions<TContext>, 'context'>
+  options: WithRequired<H3HandlerOptions<TContext>, 'context'>,
 ): EventHandler
 export function startServerAndCreateH3Handler<TContext extends BaseContext>(
   server: ApolloServer<TContext>,
-  options?: H3HandlerOptions<TContext>
+  options?: H3HandlerOptions<TContext>,
 ): EventHandler {
   server.startInBackgroundHandlingStartupErrorsByLoggingAndFailingAllRequests()
 
