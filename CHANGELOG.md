@@ -2,28 +2,26 @@
 
 ## [1.1.6](https://github.com/apollo-server-integrations/apollo-server-integration-h3/compare/v1.1.5...v1.1.6) (2023-08-23)
 
-
 ### 🐛 Bug Fixes
 
-* improve request body parsing ([#39](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/39)) ([01c7834](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/01c783499fb992a5ff3f04852c9f09b72805ef4d))
-
+- improve request body parsing ([#39](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/39)) ([01c7834](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/01c783499fb992a5ff3f04852c9f09b72805ef4d))
 
 ### 🧹 Miscellaneous
 
-* **deps:** update all non-major dependencies ([#25](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/25)) ([f84bd81](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/f84bd810cb7e898a73d481064f1b948edc61bb0b))
-* **deps:** update all non-major dependencies ([#27](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/27)) ([d56b97a](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/d56b97a698cc02e5f19f0a19936ccca3e3d6f52b))
-* **deps:** update all non-major dependencies ([#29](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/29)) ([608fca2](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/608fca2ddaaa5f0c92feda6e167e3e5be5205f61))
-* **deps:** update all non-major dependencies ([#36](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/36)) ([fd9e66e](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/fd9e66ec035c60a208005119f57373346c1d177f))
-* **deps:** update devdependency @apollo/utils.withrequired to v3 ([#32](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/32)) ([d6a38aa](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/d6a38aa016263977a41758c4b8f7c52f01d2f173))
-* **deps:** update devdependency eslint-config-prettier to v9 ([#37](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/37)) ([d65787c](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/d65787ced1f6e6a3e3ce89fd308240e9c8464735))
-* **deps:** update devdependency eslint-plugin-unused-imports to v3 ([#35](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/35)) ([4bf76f0](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/4bf76f090e067f71237b1062bd6890ecddcf1fa7))
-* **deps:** update devdependency prettier to v3 ([#33](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/33)) ([e4b6d52](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/e4b6d52d46325dcbc723a930ab686228dc6793f1))
-* **deps:** update devdependency typescript to v5 ([#30](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/30)) ([aaa80fb](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/aaa80fb05bba53c568047b279ff8485bb1b51559))
-* **deps:** update devdependency unbuild to v2 ([80894a0](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/80894a0dac52bf2b04048eb12ecc3822707c68b8))
-* **deps:** update pnpm to v7.29.0 ([#28](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/28)) ([ba669c5](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/ba669c5c169b696ba357942b79c923431f0c4ec5))
-* **deps:** update pnpm to v8 ([#31](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/31)) ([ef38ad7](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/ef38ad7f0e159834886dc0d16d0ed9999bb2019c))
-* **deps:** update typescript-eslint monorepo to v6 ([#34](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/34)) ([e963517](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/e963517f0223b760a7fe8845fe6ebc8f452a61b1))
-* remove problematic types export and instead bundle type definitions for esm and cjs ([8e99791](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/8e99791406815b5008fcf655dfe685f05322a93a))
+- **deps:** update all non-major dependencies ([#25](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/25)) ([f84bd81](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/f84bd810cb7e898a73d481064f1b948edc61bb0b))
+- **deps:** update all non-major dependencies ([#27](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/27)) ([d56b97a](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/d56b97a698cc02e5f19f0a19936ccca3e3d6f52b))
+- **deps:** update all non-major dependencies ([#29](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/29)) ([608fca2](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/608fca2ddaaa5f0c92feda6e167e3e5be5205f61))
+- **deps:** update all non-major dependencies ([#36](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/36)) ([fd9e66e](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/fd9e66ec035c60a208005119f57373346c1d177f))
+- **deps:** update devdependency @apollo/utils.withrequired to v3 ([#32](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/32)) ([d6a38aa](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/d6a38aa016263977a41758c4b8f7c52f01d2f173))
+- **deps:** update devdependency eslint-config-prettier to v9 ([#37](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/37)) ([d65787c](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/d65787ced1f6e6a3e3ce89fd308240e9c8464735))
+- **deps:** update devdependency eslint-plugin-unused-imports to v3 ([#35](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/35)) ([4bf76f0](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/4bf76f090e067f71237b1062bd6890ecddcf1fa7))
+- **deps:** update devdependency prettier to v3 ([#33](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/33)) ([e4b6d52](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/e4b6d52d46325dcbc723a930ab686228dc6793f1))
+- **deps:** update devdependency typescript to v5 ([#30](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/30)) ([aaa80fb](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/aaa80fb05bba53c568047b279ff8485bb1b51559))
+- **deps:** update devdependency unbuild to v2 ([80894a0](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/80894a0dac52bf2b04048eb12ecc3822707c68b8))
+- **deps:** update pnpm to v7.29.0 ([#28](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/28)) ([ba669c5](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/ba669c5c169b696ba357942b79c923431f0c4ec5))
+- **deps:** update pnpm to v8 ([#31](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/31)) ([ef38ad7](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/ef38ad7f0e159834886dc0d16d0ed9999bb2019c))
+- **deps:** update typescript-eslint monorepo to v6 ([#34](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/34)) ([e963517](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/e963517f0223b760a7fe8845fe6ebc8f452a61b1))
+- remove problematic types export and instead bundle type definitions for esm and cjs ([8e99791](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/8e99791406815b5008fcf655dfe685f05322a93a))
 
 ## [1.1.5](https://github.com/apollo-server-integrations/apollo-server-integration-h3/compare/v1.1.4...v1.1.5) (2023-02-01)
 
