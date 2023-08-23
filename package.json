@@ -30,7 +30,7 @@
   },
   "peerDependencies": {
     "@apollo/server": "^4.1.1",
-    "h3": "^0.8.6 || ^1.0.0"
+    "h3": "^1.8.0"
   },
   "devDependencies": {
     "@apollo/server": "^4.9.1",

@@ -13,8 +13,7 @@ import {
   HTTPMethod,
   isMethod,
   setHeaders,
-  readRawBody,
-  getRequestHeader,
+  readBody,
 } from 'h3'
 import type { IncomingHttpHeaders } from 'http'
 
@@ -117,13 +116,7 @@ function normalizeQueryString(url: string | undefined): string {
 async function normalizeBody(event: H3Event): Promise<unknown> {
   const PayloadMethods: HTTPMethod[] = ['PATCH', 'POST', 'PUT', 'DELETE']
   if (isMethod(event, PayloadMethods)) {
-    // We cannot use 'readBody' here because it will hide errors in the json parsing
-    const body = await readRawBody(event)
-    if (getRequestHeader(event, 'content-type')?.includes('application/json')) {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-      return body ? JSON.parse(body) : {}
-    } else {
-      return body
-    }
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+    return await readBody(event)
   }
 }
