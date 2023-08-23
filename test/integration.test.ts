@@ -18,7 +18,7 @@ describe('integration:apollo-server-h3', () => {
 defineIntegrationTestSuite(
   async (
     serverOptions: ApolloServerOptions<BaseContext>,
-    testOptions?: CreateServerForIntegrationTestsOptions
+    testOptions?: CreateServerForIntegrationTestsOptions,
   ) => {
     const app = createApp()
     const apollo = new ApolloServer({
@@ -28,7 +28,7 @@ defineIntegrationTestSuite(
       '/',
       startServerAndCreateH3Handler(apollo, {
         context: testOptions?.context,
-      })
+      }),
     )
 
     const httpServer = createServer(toNodeListener(app))
@@ -49,7 +49,7 @@ defineIntegrationTestSuite(
   {
     serverIsStartedInBackground: true,
     noIncrementalDelivery: true,
-  }
+  },
 )
 
 // Stolen from apollo server integration tests
