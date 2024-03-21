@@ -14,8 +14,8 @@ import {
   isMethod,
   setHeaders,
   readBody,
+  RequestHeaders,
 } from 'h3'
-import type { IncomingHttpHeaders } from 'http'
 
 type WithRequired<T, K extends keyof T> = T & Required<Pick<T, K>>
 export interface H3ContextFunctionArgument {
@@ -94,7 +94,7 @@ async function toGraphqlRequest(event: H3Event): Promise<HTTPGraphQLRequest> {
   }
 }
 
-function normalizeHeaders(headers: IncomingHttpHeaders): HeaderMap {
+function normalizeHeaders(headers: RequestHeaders): HeaderMap {
   const headerMap = new HeaderMap()
   for (const [key, value] of Object.entries(headers)) {
     if (Array.isArray(value)) {
