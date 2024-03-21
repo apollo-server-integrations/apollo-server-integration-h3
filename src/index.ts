@@ -14,8 +14,8 @@ import {
   isMethod,
   setHeaders,
   readBody,
+  RequestHeaders,
 } from 'h3'
-import type { IncomingHttpHeaders } from 'http'
 import type { WithRequired } from '@apollo/utils.withrequired'
 
 export interface H3ContextFunctionArgument {
@@ -28,15 +28,15 @@ export interface H3HandlerOptions<TContext extends BaseContext> {
 
 export function startServerAndCreateH3Handler(
   server: ApolloServer<BaseContext>,
-  options?: H3HandlerOptions<BaseContext>
+  options?: H3HandlerOptions<BaseContext>,
 ): EventHandler
 export function startServerAndCreateH3Handler<TContext extends BaseContext>(
   server: ApolloServer<TContext>,
-  options: WithRequired<H3HandlerOptions<TContext>, 'context'>
+  options: WithRequired<H3HandlerOptions<TContext>, 'context'>,
 ): EventHandler
 export function startServerAndCreateH3Handler<TContext extends BaseContext>(
   server: ApolloServer<TContext>,
-  options?: H3HandlerOptions<TContext>
+  options?: H3HandlerOptions<TContext>,
 ): EventHandler {
   server.startInBackgroundHandlingStartupErrorsByLoggingAndFailingAllRequests()
 
@@ -94,7 +94,7 @@ async function toGraphqlRequest(event: H3Event): Promise<HTTPGraphQLRequest> {
   }
 }
 
-function normalizeHeaders(headers: IncomingHttpHeaders): HeaderMap {
+function normalizeHeaders(headers: RequestHeaders): HeaderMap {
   const headerMap = new HeaderMap()
   for (const [key, value] of Object.entries(headers)) {
     if (Array.isArray(value)) {
