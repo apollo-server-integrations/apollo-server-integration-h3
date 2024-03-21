@@ -14,9 +14,8 @@ import {
   isMethod,
   setHeaders,
   readBody,
-  RequestHeaders
+  RequestHeaders,
 } from 'h3'
-import type { IncomingHttpHeaders } from 'http'
 
 type WithRequired<T, K extends keyof T> = T & Required<Pick<T, K>>
 export interface H3ContextFunctionArgument {
