@@ -14,6 +14,7 @@ import {
   isMethod,
   setHeaders,
   readBody,
+  RequestHeaders
 } from 'h3'
 import type { IncomingHttpHeaders } from 'http'
 
@@ -94,7 +95,7 @@ async function toGraphqlRequest(event: H3Event): Promise<HTTPGraphQLRequest> {
   }
 }
 
-function normalizeHeaders(headers: IncomingHttpHeaders): HeaderMap {
+function normalizeHeaders(headers: RequestHeaders): HeaderMap {
   const headerMap = new HeaderMap()
   for (const [key, value] of Object.entries(headers)) {
     if (Array.isArray(value)) {
