@@ -15,7 +15,6 @@ jobs:
       - uses: google-github-actions/release-please-action@v4
         id: release
         with:
-          release-type: node
           token: ${{ secrets.RELEASE_PR_TOKEN }}
 
       # Format changelog, workaround for https://github.com/google-github-actions/release-please-action/issues/542
