@@ -25,6 +25,7 @@
     "lint": "pnpm lint:eslint && pnpm lint:prettier",
     "lint:eslint": "eslint --ext .ts,.js,.vue,.graphql --ignore-path .gitignore --report-unused-disable-directives .",
     "lint:prettier": "prettier --check --ignore-path .gitignore . '!pnpm-lock.yaml'",
+    "example:simple": "listhen -w --open ./examples/simple.ts",
     "prepack": "unbuild",
     "release": "pnpm test && standard-version && git push --follow-tags && pnpm publish"
   },
@@ -47,6 +48,7 @@
     "graphql": "^16.8.1",
     "h3": "^1.11.1",
     "jest": "^29.7.0",
+    "listhen": "^1.7.2",
     "prettier": "^3.2.5",
     "standard-version": "^9.5.0",
     "ts-jest": "^29.1.2",

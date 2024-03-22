@@ -31,7 +31,7 @@ import { ApolloServer } from '@apollo/server'
 import { startServerAndCreateH3Handler } from '@as-integrations/h3'
 
 const apollo = new ApolloServer({
-  // Specify server options here
+  // Specify server options like schema and resolvers here
 })
 
 export default startServerAndCreateH3Handler(apollo, {
@@ -45,15 +45,15 @@ export default startServerAndCreateH3Handler(apollo, {
 Create and configure an instance of Apollo Server as described in the [documentation](https://www.apollographql.com/docs/apollo-server/getting-started#step-6-create-an-instance-of-apolloserver) and then register it as a route handler in your `h3` application.
 
 ```js
-import { createApp, toNodeListener } from 'h3'
+import { createApp } from 'h3'
 import { ApolloServer } from '@apollo/server'
 import { startServerAndCreateH3Handler } from '@as-integrations/h3'
 
 const apollo = new ApolloServer({
-  // Specify server options here
+  // Specify server options like schema and resolvers here
 })
 
-const app = createApp()
+export const app = createApp()
 app.use(
   '/api',
   startServerAndCreateH3Handler(apollo, {
@@ -61,9 +61,10 @@ app.use(
     context: (event) => {...}
   })
 )
-
-createServer(toNodeListener(app)).listen(process.env.PORT || 3000)
 ```
+
+Then run your h3 server as usual, e.g. with `npx --yes listhen -w --open ./app.ts`.
+Visit http://localhost:3000/api in your browser to access the Apollo Sandbox.
 
 ## 💻 Development
 
