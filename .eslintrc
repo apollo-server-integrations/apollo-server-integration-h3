@@ -38,8 +38,8 @@
       "parserOptions": {
         // Use ts parser for ts files and for the script tag in vue files
         "parser": "@typescript-eslint/parser",
-        // Path to tsconfig to enable rules that require type information
-        "project": "./tsconfig.eslint.json",
+        // Enable rules that require type information
+        "project": true,
         // Correctly handle vue files
         "extraFileExtensions": [".vue"]
       },
