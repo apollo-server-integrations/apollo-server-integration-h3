@@ -8,6 +8,6 @@
     // whatever paths you intend to lint
     "src",
     "test",
-    "examples",
+    "examples"
   ]
 }
