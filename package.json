@@ -34,7 +34,8 @@
     "@apollo/server": "^4.1.1",
     "h3": "^1.8.0",
     "graphql": "^16.0.0",
-    "graphql-ws": "^5.0.0"
+    "graphql-ws": "^5.0.0",
+    "crossws": "^0.2.4"
   },
   "peerDependenciesMeta": {
     "graphql-ws": {

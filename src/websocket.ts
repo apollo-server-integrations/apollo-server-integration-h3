@@ -11,8 +11,9 @@ import {
   EventHandlerRequest,
 } from 'h3'
 // TODO: Import from h3 once it's exposed there
+// Then also remove the explicit reference to crossws as a dependency in package.json
 // https://github.com/unjs/h3/issues/716
-import { Hooks, Peer } from 'crossws'
+import type { Hooks, Peer } from 'crossws'
 
 /**
  * The extra that will be put in the `Context`.
