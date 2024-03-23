@@ -2,29 +2,27 @@
 
 ## [1.1.7](https://github.com/apollo-server-integrations/apollo-server-integration-h3/compare/v1.1.6...v1.1.7) (2024-03-23)
 
-
 ### 📚 Documentation
 
-* add a simple h3 example ([#59](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/59)) ([31935e1](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/31935e1c2910e002528d038ea5de1a1c10626abd))
-
+- add a simple h3 example ([#59](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/59)) ([31935e1](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/31935e1c2910e002528d038ea5de1a1c10626abd))
 
 ### 🧹 Miscellaneous
 
-* add documentation section to changelog ([#60](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/60)) ([707ec29](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/707ec292ab6c0d0213a0889dca19fbe67dac6f8e))
-* add release please manifest ([#56](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/56)) ([4d26ce4](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/4d26ce4c6e79ee860ff91f1c22b468a03ba014af))
-* **deps:** update actions/checkout action to v4 ([#41](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/41)) ([78887f8](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/78887f8af88935ac027a41deb2cfc213e27d4e95))
-* **deps:** update actions/checkout digest to 8ade135 ([#47](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/47)) ([487a914](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/487a9140017f01c4926f992b20e7e31100fc3843))
-* **deps:** update actions/setup-node action to v4 ([#48](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/48)) ([efc80f5](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/efc80f5da318c92e0b04e6afd8ceca542e25199f))
-* **deps:** update all non-major dependencies ([#40](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/40)) ([dcb6958](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/dcb6958b89df05d987f13bc19ef507ed17bfcd70))
-* **deps:** update codecov/codecov-action action to v4 ([#51](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/51)) ([0a0c0fa](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/0a0c0fa1f00e7d3aade0419ae7b3267bd572b50d))
-* **deps:** update devdependency vitest to v1 ([#50](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/50)) ([377463b](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/377463bbe6f2e2288b2c620cf315943eb8bb1c09))
-* **deps:** update google-github-actions/release-please-action action to v4 ([#49](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/49)) ([0b26309](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/0b26309e260f61ec1dd56bee59b52eefd5668434))
-* **deps:** update typescript-eslint monorepo to v7 ([#52](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/52)) ([e7e70a3](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/e7e70a3d14f73d226cf30cc3a39cfb0d54b6225b))
-* format .release-please-manifest.json with Prettier ([#57](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/57)) ([55c6454](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/55c64541bbd06ae5878524f8865f42d691a0805a))
-* move please-release config to config file ([97ef2f7](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/97ef2f79099c0ced39edf9f9148f6689d64e1f98))
-* only try to push changes when release PR is created ([79ccbe5](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/79ccbe5fb6b3a5b59a610d082b90871ea0377a5c))
-* update @vitest/coverage-c8 to @vitest/coverage-v8 ([#66](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/66)) ([1da98de](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/1da98de5118b9414ddfb48ba24d217feb3196c1f))
-* update release-please config to exclude component in tag ([#58](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/58)) ([3553907](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/3553907d8fe0628468b9ac5972cbc97934afb8b5))
+- add documentation section to changelog ([#60](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/60)) ([707ec29](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/707ec292ab6c0d0213a0889dca19fbe67dac6f8e))
+- add release please manifest ([#56](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/56)) ([4d26ce4](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/4d26ce4c6e79ee860ff91f1c22b468a03ba014af))
+- **deps:** update actions/checkout action to v4 ([#41](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/41)) ([78887f8](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/78887f8af88935ac027a41deb2cfc213e27d4e95))
+- **deps:** update actions/checkout digest to 8ade135 ([#47](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/47)) ([487a914](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/487a9140017f01c4926f992b20e7e31100fc3843))
+- **deps:** update actions/setup-node action to v4 ([#48](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/48)) ([efc80f5](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/efc80f5da318c92e0b04e6afd8ceca542e25199f))
+- **deps:** update all non-major dependencies ([#40](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/40)) ([dcb6958](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/dcb6958b89df05d987f13bc19ef507ed17bfcd70))
+- **deps:** update codecov/codecov-action action to v4 ([#51](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/51)) ([0a0c0fa](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/0a0c0fa1f00e7d3aade0419ae7b3267bd572b50d))
+- **deps:** update devdependency vitest to v1 ([#50](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/50)) ([377463b](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/377463bbe6f2e2288b2c620cf315943eb8bb1c09))
+- **deps:** update google-github-actions/release-please-action action to v4 ([#49](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/49)) ([0b26309](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/0b26309e260f61ec1dd56bee59b52eefd5668434))
+- **deps:** update typescript-eslint monorepo to v7 ([#52](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/52)) ([e7e70a3](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/e7e70a3d14f73d226cf30cc3a39cfb0d54b6225b))
+- format .release-please-manifest.json with Prettier ([#57](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/57)) ([55c6454](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/55c64541bbd06ae5878524f8865f42d691a0805a))
+- move please-release config to config file ([97ef2f7](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/97ef2f79099c0ced39edf9f9148f6689d64e1f98))
+- only try to push changes when release PR is created ([79ccbe5](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/79ccbe5fb6b3a5b59a610d082b90871ea0377a5c))
+- update @vitest/coverage-c8 to @vitest/coverage-v8 ([#66](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/66)) ([1da98de](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/1da98de5118b9414ddfb48ba24d217feb3196c1f))
+- update release-please config to exclude component in tag ([#58](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/58)) ([3553907](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/3553907d8fe0628468b9ac5972cbc97934afb8b5))
 
 ## [1.1.6](https://github.com/apollo-server-integrations/apollo-server-integration-h3/compare/v1.1.5...v1.1.6) (2023-08-23)
 
