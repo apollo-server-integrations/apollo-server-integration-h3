@@ -16,6 +16,10 @@ import {
   readBody,
   RequestHeaders,
 } from 'h3'
+export {
+  defineGraphqlWebSocket,
+  defineGraphqlWebSocketHandler,
+} from './websocket'
 
 type WithRequired<T, K extends keyof T> = T & Required<Pick<T, K>>
 export interface H3ContextFunctionArgument {
