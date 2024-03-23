@@ -26,27 +26,39 @@
     "lint:eslint": "eslint --ext .ts,.js,.vue,.graphql --ignore-path .gitignore --report-unused-disable-directives .",
     "lint:prettier": "prettier --check --ignore-path .gitignore . '!pnpm-lock.yaml'",
     "example:simple": "listhen -w --open ./examples/simple.ts",
+    "example:websocket": "listhen -w --ws --open ./examples/websocket.ts",
     "prepack": "unbuild",
     "release": "pnpm test && standard-version && git push --follow-tags && pnpm publish"
   },
   "peerDependencies": {
     "@apollo/server": "^4.1.1",
-    "h3": "^1.8.0"
+    "h3": "^1.8.0",
+    "graphql": "^16.0.0",
+    "graphql-ws": "^5.0.0"
+  },
+  "peerDependenciesMeta": {
+    "graphql-ws": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "@apollo/server": "^4.10.1",
     "@apollo/server-integration-testsuite": "^4.10.1",
     "@apollo/utils.withrequired": "^3.0.0",
+    "@graphql-tools/schema": "^10.0.3",
     "@jest/globals": "^29.7.0",
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
     "@typescript-eslint/eslint-plugin": "^7.3.1",
     "@typescript-eslint/parser": "^7.3.1",
     "@vitest/coverage-c8": "^0.33.0",
+    "crossws": "^0.2.4",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-unused-imports": "^3.1.0",
     "graphql": "^16.8.1",
-    "h3": "^1.11.1",
+    "graphql-subscriptions": "^2.0.0",
+    "graphql-ws": "^5.15.0",
+    "h3": "npm:h3-nightly@latest",
     "jest": "^29.7.0",
     "listhen": "^1.7.2",
     "prettier": "^3.2.5",
