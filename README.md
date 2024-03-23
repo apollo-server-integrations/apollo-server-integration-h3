@@ -66,6 +66,51 @@ app.use(
 Then run your h3 server as usual, e.g. with `npx --yes listhen -w --open ./app.ts`.
 Visit http://localhost:3000/api in your browser to access the Apollo Sandbox.
 
+## Subscriptions with WebSockets
+
+This package also supports subscriptions over WebSockets. To enable this feature, you need to install the `graphql-ws` package:
+
+```sh
+# npm
+npm install graphql-ws
+
+# yarn
+yarn add graphql-ws
+
+# pnpm
+pnpm add graphql-ws
+```
+
+Then you can add a WebSocket handler to your `h3` app using the `defineGraphqlWebSocketHandler` or `defineGraphqlWebSocket` functions from this package. Here is an example that combines the HTTP and WebSocket handlers in a single app.
+
+```js
+import { createApp } from 'h3'
+import { ApolloServer } from '@apollo/server'
+import { startServerAndCreateH3Handler, defineGraphqlWebSocketHandler } from '@as-integrations/h3'
+import { makeExecutableSchema } from '@graphql-tools/schema'
+
+// Define your schema and resolvers
+const typeDefs = `...`
+const resolvers = { ... }
+const schema = makeExecutableSchema({ typeDefs, resolvers })
+
+const apollo = new ApolloServer({ schema })
+
+export const app = createApp()
+app.use(
+  '/api',
+  startServerAndCreateH3Handler(apollo)
+)
+app.use(
+  '/api/_ws',
+  defineGraphqlWebSocketHandler({ schema })
+)
+```
+
+Then you can connect to the WebSocket endpoint using the Apollo Sandbox or any other client that supports the `graphql-ws` protocol.
+
+See the [WebSocket example](./examples/websocket.ts) for a complete example.
+
 ## 💻 Development
 
 - Clone this repository
