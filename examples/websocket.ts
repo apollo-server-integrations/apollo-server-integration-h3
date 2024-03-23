@@ -76,6 +76,7 @@ function incrementNumber() {
   currentNumber++
   pubsub
     .publish('NUMBER_INCREMENTED', { numberIncremented: currentNumber })
+    // eslint-disable-next-line no-console
     .catch(console.error)
   setTimeout(incrementNumber, 1000)
 }
