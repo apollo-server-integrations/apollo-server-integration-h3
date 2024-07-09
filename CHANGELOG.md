@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/apollo-server-integrations/apollo-server-integration-h3/compare/v1.2.0...v1.2.1) (2024-07-09)
+
+
+### 🧹 Miscellaneous
+
+* rename prepare to dev:prepare in package.json to fix publish process ([#77](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/77)) ([b9fb1ee](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/b9fb1eee893975282782a6e0a4edf2bc9ac9516c))
+
 ## [1.2.0](https://github.com/apollo-server-integrations/apollo-server-integration-h3/compare/v1.1.6...v1.2.0) (2024-07-09)
 
 ### 🔖 Features
