@@ -56,5 +56,8 @@
     "unbuild": "^2.0.0",
     "vitest": "^1.4.0"
   },
-  "packageManager": "pnpm@8.15.6"
+  "packageManager": "pnpm@8.15.6",
+  "engines": {
+    "node": "^16.10.0 || >=18.0.0"
+  }
 }
