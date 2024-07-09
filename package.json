@@ -20,7 +20,7 @@
     "dist"
   ],
   "scripts": {
-    "prepare": "unbuild --stub",
+    "dev:prepare": "unbuild --stub",
     "build": "unbuild",
     "test": "vitest dev",
     "test:integration": "jest",
