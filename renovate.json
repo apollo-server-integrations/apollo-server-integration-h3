@@ -1,4 +1,4 @@
 {
-  "extends": ["@nuxtjs", ":widenPeerDependencies"],
+  "extends": ["github>unjs/renovate-config", ":widenPeerDependencies"],
   "dependencyDashboard": false
 }
