@@ -36,7 +36,9 @@ const apollo = new ApolloServer({
 
 export default startServerAndCreateH3Handler(apollo, {
   // Optional: Specify context
-  context: (event) => {...}
+  context: (event) => {
+    /*...*/
+  },
 })
 ```
 
@@ -58,8 +60,10 @@ app.use(
   '/api',
   startServerAndCreateH3Handler(apollo, {
     // Optional: Specify context
-    context: (event) => {...}
-  })
+    context: (event) => {
+      /*...*/
+    },
+  }),
 )
 ```
 

@@ -5,9 +5,9 @@ import {
 import { createApp, toNodeListener } from 'h3'
 import { ApolloServer, ApolloServerOptions, BaseContext } from '@apollo/server'
 import { startServerAndCreateH3Handler } from '../src'
-import { createServer, Server } from 'http'
-import { AddressInfo } from 'net'
-import { format } from 'url'
+import { createServer, Server } from 'node:http'
+import { AddressInfo } from 'node:net'
+import { format } from 'node:url'
 import { describe, it, expect } from '@jest/globals'
 
 describe('integration:apollo-server-h3', () => {

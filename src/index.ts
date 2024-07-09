@@ -46,7 +46,6 @@ export function startServerAndCreateH3Handler<TContext extends BaseContext>(
 
   const defaultContext: ContextFunction<
     [H3ContextFunctionArgument],
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any -- This `any` is safe because the overload above shows that context can only be left out if you're using BaseContext as your context, and {} is a valid BaseContext.
     any
   > = () => Promise.resolve({})
 
@@ -60,6 +59,7 @@ export function startServerAndCreateH3Handler<TContext extends BaseContext>(
     // https://github.com/apollographql/apollo-server/blob/fa82c1d5299c4803f9ef8ae7fa2e367eadd8c0e6/packages/server/src/runHttpQuery.ts#L182-L192
     if (isMethod(event, 'OPTIONS')) {
       // send 204 response
+      // eslint-disable-next-line unicorn/no-null
       return null
     }
 
@@ -120,7 +120,6 @@ function normalizeQueryString(url: string | undefined): string {
 async function normalizeBody(event: H3Event): Promise<unknown> {
   const PayloadMethods: HTTPMethod[] = ['PATCH', 'POST', 'PUT', 'DELETE']
   if (isMethod(event, PayloadMethods)) {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return await readBody(event)
   }
 }
