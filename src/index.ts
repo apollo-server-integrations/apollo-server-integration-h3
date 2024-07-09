@@ -5,6 +5,7 @@ import type {
   HTTPGraphQLRequest,
 } from '@apollo/server'
 import { HeaderMap } from '@apollo/server'
+import { Hooks } from 'crossws'
 import {
   eventHandler,
   EventHandler,
@@ -28,6 +29,7 @@ export interface H3ContextFunctionArgument {
 
 export interface H3HandlerOptions<TContext extends BaseContext> {
   context?: ContextFunction<[H3ContextFunctionArgument], TContext>
+  websocket?: Partial<Hooks>
 }
 
 export function startServerAndCreateH3Handler(
@@ -54,38 +56,42 @@ export function startServerAndCreateH3Handler<TContext extends BaseContext>(
     TContext
   > = options?.context ?? defaultContext
 
-  return eventHandler(async (event) => {
-    // Apollo-server doesn't handle OPTIONS calls, so we have to do this on our own
-    // https://github.com/apollographql/apollo-server/blob/fa82c1d5299c4803f9ef8ae7fa2e367eadd8c0e6/packages/server/src/runHttpQuery.ts#L182-L192
-    if (isMethod(event, 'OPTIONS')) {
-      // send 204 response
-      // eslint-disable-next-line unicorn/no-null
-      return null
-    }
-
-    try {
-      const graphqlRequest = await toGraphqlRequest(event)
-      const { body, headers, status } = await server.executeHTTPGraphQLRequest({
-        httpGraphQLRequest: graphqlRequest,
-        context: () => contextFunction({ event }),
-      })
-
-      if (body.kind === 'chunked') {
-        throw new Error('Incremental delivery not implemented')
+  return eventHandler({
+    async handler(event) {
+      // Apollo-server doesn't handle OPTIONS calls, so we have to do this on our own
+      // https://github.com/apollographql/apollo-server/blob/fa82c1d5299c4803f9ef8ae7fa2e367eadd8c0e6/packages/server/src/runHttpQuery.ts#L182-L192
+      if (isMethod(event, 'OPTIONS')) {
+        // send 204 response
+        // eslint-disable-next-line unicorn/no-null
+        return null
       }
 
-      setHeaders(event, Object.fromEntries(headers))
-      event.res.statusCode = status || 200
-      return body.string
-    } catch (error) {
-      if (error instanceof SyntaxError) {
-        // This is what the apollo test suite expects
-        event.res.statusCode = 400
-        return error.message
-      } else {
-        throw error
+      try {
+        const graphqlRequest = await toGraphqlRequest(event)
+        const { body, headers, status } =
+          await server.executeHTTPGraphQLRequest({
+            httpGraphQLRequest: graphqlRequest,
+            context: () => contextFunction({ event }),
+          })
+
+        if (body.kind === 'chunked') {
+          throw new Error('Incremental delivery not implemented')
+        }
+
+        setHeaders(event, Object.fromEntries(headers))
+        event.res.statusCode = status || 200
+        return body.string
+      } catch (error) {
+        if (error instanceof SyntaxError) {
+          // This is what the apollo test suite expects
+          event.res.statusCode = 400
+          return error.message
+        } else {
+          throw error
+        }
       }
-    }
+    },
+    websocket: options?.websocket,
   })
 }
 

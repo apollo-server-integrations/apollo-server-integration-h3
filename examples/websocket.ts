@@ -57,15 +57,41 @@ const apollo = new ApolloServer({
   ],
 })
 
-app.use('/', [startServerAndCreateH3Handler(apollo, {})])
-// TODO: Move this to the root handler, once https://github.com/unjs/h3/issues/719 is fixed
-// Then we can also remove the landing page plugin above
+//app.use('/', startServerAndCreateH3Handler(apollo))
+app.use(
+  // TODO: For some reason it doesn't work with the root path
+  // see discussion at https://github.com/unjs/h3/issues/719
+  '/ws',
+  startServerAndCreateH3Handler(apollo, {
+    websocket: {
+      ...defineGraphqlWebSocket({ schema }),
+      error(peer, error) {
+        console.error('[ws] error', peer, error)
+        // In a real app, you would want to properly log this error
+      },
+      // For debugging:
+      // message(peer, message) {
+      //   console.error('[ws] message', peer, message)
+      // },
+      // open(peer) {
+      //   console.error('[ws] open', peer)
+      // },
+      // upgrade(req) {
+      //   console.error('[ws] upgrade', req)
+      // },
+      // close(peer, details) {
+      //   console.error('[ws] close', peer, details)
+      // }
+    },
+  }),
+)
+
+// Alternatively, you can use the following to define only the WebSocket server without ApolloServer.
 app.use(
   '/_ws',
   defineWebSocketHandler({
     ...defineGraphqlWebSocket({ schema }),
     error(peer, error) {
-      // eslint-disable-next-line no-console
       console.log('[ws] error', peer, error)
     },
   }),
@@ -76,7 +102,6 @@ function incrementNumber() {
   currentNumber++
   pubsub
     .publish('NUMBER_INCREMENTED', { numberIncremented: currentNumber })
-    // eslint-disable-next-line no-console
     .catch(console.error)
   setTimeout(incrementNumber, 1000)
 }

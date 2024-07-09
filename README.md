@@ -90,12 +90,17 @@ Then you can add a WebSocket handler to your `h3` app using the `defineGraphqlWe
 ```js
 import { createApp } from 'h3'
 import { ApolloServer } from '@apollo/server'
-import { startServerAndCreateH3Handler, defineGraphqlWebSocketHandler } from '@as-integrations/h3'
+import {
+  startServerAndCreateH3Handler,
+  defineGraphqlWebSocketHandler,
+} from '@as-integrations/h3'
 import { makeExecutableSchema } from '@graphql-tools/schema'
 
 // Define your schema and resolvers
 const typeDefs = `...`
-const resolvers = { ... }
+const resolvers = {
+  /*...*/
+}
 const schema = makeExecutableSchema({ typeDefs, resolvers })
 
 const apollo = new ApolloServer({ schema })
@@ -103,11 +108,9 @@ const apollo = new ApolloServer({ schema })
 export const app = createApp()
 app.use(
   '/api',
-  startServerAndCreateH3Handler(apollo)
-)
-app.use(
-  '/api/_ws',
-  defineGraphqlWebSocketHandler({ schema })
+  startServerAndCreateH3Handler(apollo, {
+    websocket: defineGraphqlWebSocketHandler({ schema }),
+  }),
 )
 ```
 
