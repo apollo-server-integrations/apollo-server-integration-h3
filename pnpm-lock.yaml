@@ -14,6 +14,9 @@ devDependencies:
   '@apollo/utils.withrequired':
     specifier: ^3.0.0
     version: 3.0.0
+  '@jest/globals':
+    specifier: ^29.7.0
+    version: 29.7.0
   '@typescript-eslint/parser':
     specifier: ^7.16.0
     version: 7.16.0(eslint@9.6.0)(typescript@5.5.3)
