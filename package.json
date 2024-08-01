@@ -51,7 +51,7 @@
     "@apollo/utils.withrequired": "^3.0.0",
     "@graphql-tools/schema": "^10.0.4",
     "@jest/globals": "^29.7.0",
-    "@typescript-eslint/parser": "^7.16.1",
+    "@typescript-eslint/parser": "^8.0.0",
     "crossws": "^0.2.4",
     "@vitest/coverage-v8": "^2.0.3",
     "eslint": "^9.7.0",
