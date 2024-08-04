@@ -34,7 +34,7 @@ export interface Extra {
  */
 interface Client {
   handleMessage: (data: string) => Promise<void>
-  closed: (code: number, reason: string) => Promise<void>
+  closed: (code?: number, reason?: string) => Promise<void>
 }
 
 /**
@@ -94,8 +94,7 @@ export function defineGraphqlWebSocket<
       if (!client) throw new Error('Closing a missing client')
       // TODO: Once h3 exposes the protocol, add a check here for deprecated protocols
       // similar to https://github.com/enisdenjo/graphql-ws/blob/6013eb54829b27bd7c598f0985ec80a0e1acf09c/src/use/deno.ts#L109-L116
-      // TODO: Remove the fallback to 1000 once https://github.com/enisdenjo/graphql-ws/issues/547 is fixed
-      return client.closed(details.code ?? 1000, details.reason ?? '')
+      return client.closed(details.code, details.reason)
     },
   })
 }
