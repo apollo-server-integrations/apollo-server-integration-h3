@@ -49,9 +49,9 @@
     "@apollo/server": "^4.11.0",
     "@apollo/server-integration-testsuite": "^4.11.0",
     "@apollo/utils.withrequired": "^3.0.0",
-    "@graphql-tools/schema": "^10.0.5",
+    "@graphql-tools/schema": "^10.0.6",
     "@jest/globals": "^29.7.0",
-    "@typescript-eslint/parser": "^8.0.1",
+    "@typescript-eslint/parser": "^8.2.0",
     "crossws": "^0.2.4",
     "@vitest/coverage-v8": "^2.0.5",
     "eslint": "^9.9.0",
@@ -71,7 +71,7 @@
     "unbuild": "^2.0.0",
     "vitest": "^2.0.5"
   },
-  "packageManager": "pnpm@9.7.0",
+  "packageManager": "pnpm@9.7.1",
   "engines": {
     "node": "^16.10.0 || >=18.0.0"
   }
