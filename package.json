@@ -40,11 +40,6 @@
     "graphql-ws": "^5.0.0 || ^6.0.0",
     "crossws": "^0.2.4 || ^0.3.0"
   },
-  "peerDependenciesMeta": {
-    "graphql-ws": {
-      "optional": true
-    }
-  },
   "devDependencies": {
     "@apollo/server": "^4.11.3",
     "@apollo/server-integration-testsuite": "^4.11.3",
