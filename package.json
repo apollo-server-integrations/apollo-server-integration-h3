@@ -73,6 +73,6 @@
   },
   "packageManager": "pnpm@10.5.1",
   "engines": {
-    "node": "^16.10.0 || >=18.0.0"
+    "node": "23.9.0"
   }
 }
