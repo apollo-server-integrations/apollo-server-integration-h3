@@ -49,7 +49,7 @@
     "@apollo/server": "4.11.3",
     "@apollo/server-integration-testsuite": "4.11.3",
     "@apollo/utils.withrequired": "3.0.0",
-    "@graphql-tools/schema": "10.0.20",
+    "@graphql-tools/schema": "10.0.21",
     "@jest/globals": "29.7.0",
     "@typescript-eslint/parser": "8.26.0",
     "crossws": "0.3.4",
