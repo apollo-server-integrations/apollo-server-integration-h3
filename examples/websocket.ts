@@ -33,7 +33,7 @@ const resolvers = {
   },
   Subscription: {
     numberIncremented: {
-      subscribe: () => pubsub.asyncIterator(['NUMBER_INCREMENTED']),
+      subscribe: () => pubsub.asyncIterableIterator(['NUMBER_INCREMENTED']),
     },
   },
 }
