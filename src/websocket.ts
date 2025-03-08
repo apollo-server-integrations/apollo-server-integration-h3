@@ -43,9 +43,8 @@ export async function defineGraphqlWebSocket<
   E extends Record<PropertyKey, unknown> = Record<PropertyKey, never>,
 >(options: ServerOptions<P, Extra & Partial<E>>): Promise<Partial<Hooks>> {
   // Local import since graphql-ws is only an optional peer dependency
-  const { makeServer, GRAPHQL_TRANSPORT_WS_PROTOCOL } = await import(
-    'graphql-ws'
-  )
+  const { makeServer, DEPRECATED_GRAPHQL_WS_PROTOCOL, CloseCode } =
+    await import('graphql-ws')
   const server = makeServer(options)
   const peers = new WeakMap<Peer, Client>()
   return defineWebSocket({
@@ -61,20 +60,16 @@ export async function defineGraphqlWebSocket<
 
       client.closed = server.opened(
         {
-          // TODO: use protocol on socket once h3 exposes it
-          // https://github.com/unjs/crossws/issues/31
-          protocol: GRAPHQL_TRANSPORT_WS_PROTOCOL,
+          protocol: peer.request.headers?.get('Sec-WebSocket-Protocol') ?? '',
           send: (message) => {
             // The peer might have been destroyed in the meantime, send only if exists
             if (peers.has(peer)) {
               peer.send(message)
             }
           },
-          close: (_code, _reason) => {
+          close: (code, reason) => {
             if (peers.has(peer)) {
-              // TODO: No way to close a connection in crossws
-              // https://github.com/unjs/crossws/issues/23
-              // peer.close(code, reason);
+              peer.close(code, reason)
             }
           },
           onMessage: (cb) => (client.handleMessage = cb),
@@ -91,8 +86,17 @@ export async function defineGraphqlWebSocket<
     close(peer, details) {
       const client = peers.get(peer)
       if (!client) throw new Error('Closing a missing client')
-      // TODO: Once h3 exposes the protocol, add a check here for deprecated protocols
-      // similar to https://github.com/enisdenjo/graphql-ws/blob/6013eb54829b27bd7c598f0985ec80a0e1acf09c/src/use/deno.ts#L109-L116
+      const upgradeProtocol = peer.request.headers?.get(
+        'Sec-WebSocket-Protocol',
+      )
+      if (
+        details.code === CloseCode.SubprotocolNotAcceptable &&
+        upgradeProtocol === DEPRECATED_GRAPHQL_WS_PROTOCOL
+      )
+        console.warn(
+          `Client provided the unsupported and deprecated subprotocol "${upgradeProtocol}" used by subscriptions-transport-ws.` +
+            'Please see https://www.apollographql.com/docs/apollo-server/data/subscriptions/#switching-from-subscriptions-transport-ws.',
+        )
       return client.closed(details.code, details.reason)
     },
   })
