@@ -10,8 +10,6 @@ import {
 // https://github.com/unjs/h3/issues/716
 import type { Hooks, Peer } from 'crossws'
 
-const SubprotocolNotAcceptable = 4406
-
 /**
  * The extra that will be put in the `Context`.
  *
@@ -45,9 +43,8 @@ export async function defineGraphqlWebSocket<
   E extends Record<PropertyKey, unknown> = Record<PropertyKey, never>,
 >(options: ServerOptions<P, Extra & Partial<E>>): Promise<Partial<Hooks>> {
   // Local import since graphql-ws is only an optional peer dependency
-  const { makeServer, DEPRECATED_GRAPHQL_WS_PROTOCOL } = await import(
-    'graphql-ws'
-  )
+  const { makeServer, DEPRECATED_GRAPHQL_WS_PROTOCOL, CloseCode } =
+    await import('graphql-ws')
   const server = makeServer(options)
   const peers = new WeakMap<Peer, Client>()
   return defineWebSocket({
@@ -93,7 +90,7 @@ export async function defineGraphqlWebSocket<
         'Sec-WebSocket-Protocol',
       )
       if (
-        details.code === SubprotocolNotAcceptable &&
+        details.code === CloseCode.SubprotocolNotAcceptable &&
         upgradeProtocol === DEPRECATED_GRAPHQL_WS_PROTOCOL
       )
         console.warn(
