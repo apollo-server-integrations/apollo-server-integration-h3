@@ -72,7 +72,7 @@ export async function defineGraphqlWebSocket<
           },
           close: (code, reason) => {
             if (peers.has(peer)) {
-              peer.close(code, reason);
+              peer.close(code, reason)
             }
           },
           onMessage: (cb) => (client.handleMessage = cb),
@@ -89,7 +89,9 @@ export async function defineGraphqlWebSocket<
     close(peer, details) {
       const client = peers.get(peer)
       if (!client) throw new Error('Closing a missing client')
-      const upgradeProtocol = peer.request.headers?.get('Sec-WebSocket-Protocol')
+      const upgradeProtocol = peer.request.headers?.get(
+        'Sec-WebSocket-Protocol',
+      )
       if (
         details.code === SubprotocolNotAcceptable &&
         upgradeProtocol === DEPRECATED_GRAPHQL_WS_PROTOCOL
@@ -97,7 +99,7 @@ export async function defineGraphqlWebSocket<
         console.warn(
           `Client provided the unsupported and deprecated subprotocol "${upgradeProtocol}" used by subscriptions-transport-ws.` +
             'Please see https://www.apollographql.com/docs/apollo-server/data/subscriptions/#switching-from-subscriptions-transport-ws.',
-        );
+        )
       return client.closed(details.code, details.reason)
     },
   })
