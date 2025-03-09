@@ -1,4 +1,4 @@
-import type { ServerOptions, ConnectionInitMessage } from 'graphql-ws'
+import { makeServer, DEPRECATED_GRAPHQL_WS_PROTOCOL, CloseCode, ServerOptions, ConnectionInitMessage } from 'graphql-ws'
 import {
   defineWebSocket,
   defineWebSocketHandler,
@@ -42,9 +42,6 @@ export async function defineGraphqlWebSocket<
   P extends ConnectionInitMessage['payload'] = ConnectionInitMessage['payload'],
   E extends Record<PropertyKey, unknown> = Record<PropertyKey, never>,
 >(options: ServerOptions<P, Extra & Partial<E>>): Promise<Partial<Hooks>> {
-  // Local import since graphql-ws is only an optional peer dependency
-  const { makeServer, DEPRECATED_GRAPHQL_WS_PROTOCOL, CloseCode } =
-    await import('graphql-ws')
   const server = makeServer(options)
   const peers = new WeakMap<Peer, Client>()
   return defineWebSocket({
