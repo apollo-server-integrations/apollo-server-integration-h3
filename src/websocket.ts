@@ -38,10 +38,10 @@ interface Client {
  * Use this over {@link defineGraphqlWebSocketHandler} if you need more control over the WebSocket server or
  * if you want to add custom hooks (e.g. for authentication or logging).
  */
-export async function defineGraphqlWebSocket<
+export function defineGraphqlWebSocket<
   P extends ConnectionInitMessage['payload'] = ConnectionInitMessage['payload'],
   E extends Record<PropertyKey, unknown> = Record<PropertyKey, never>,
->(options: ServerOptions<P, Extra & Partial<E>>): Promise<Partial<Hooks>> {
+>(options: ServerOptions<P, Extra & Partial<E>>): Partial<Hooks> {
   const server = makeServer(options)
   const peers = new WeakMap<Peer, Client>()
   return defineWebSocket({
@@ -109,5 +109,5 @@ export async function defineGraphqlWebSocketHandler<
 >(
   options: ServerOptions<P, Extra & Partial<E>>,
 ): Promise<EventHandler<EventHandlerRequest, never>> {
-  return defineWebSocketHandler(await defineGraphqlWebSocket(options))
+  return defineWebSocketHandler(defineGraphqlWebSocket(options))
 }
