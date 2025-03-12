@@ -18,10 +18,6 @@ import {
   RequestHeaders,
 } from 'h3'
 import type { WithRequired } from '@apollo/utils.withrequired'
-export {
-  defineGraphqlWebSocket,
-  defineGraphqlWebSocketHandler,
-} from './websocket'
 
 export interface H3ContextFunctionArgument {
   event: H3Event
