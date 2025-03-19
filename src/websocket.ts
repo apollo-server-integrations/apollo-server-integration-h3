@@ -1,4 +1,10 @@
-import { makeServer, DEPRECATED_GRAPHQL_WS_PROTOCOL, CloseCode, ServerOptions, ConnectionInitMessage } from 'graphql-ws'
+import {
+  makeServer,
+  DEPRECATED_GRAPHQL_WS_PROTOCOL,
+  CloseCode,
+  ServerOptions,
+  ConnectionInitMessage,
+} from 'graphql-ws'
 import {
   defineWebSocket,
   defineWebSocketHandler,
