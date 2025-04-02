@@ -51,7 +51,7 @@
     }
   },
   "dependencies": {
-    "@apollo/utils.withrequired": "^3.0.0"
+    "@apollo/utils.withrequired": "3.0.0"
   },
   "devDependencies": {
     "@apollo/server": "4.11.3",
