@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.0.1](https://github.com/apollo-server-integrations/apollo-server-integration-h3/compare/v2.0.0...v2.0.1) (2025-04-05)
+
+
+### 🧹 Miscellaneous
+
+* **deps:** lock file maintenance ([#126](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/126)) ([f1da19f](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/f1da19fe41f1988244767359ccbaacfbc8db7d63))
+* **deps:** pin dependency @apollo/utils.withrequired to 3.0.0 ([#129](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/129)) ([7e2a1fc](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/7e2a1fc5dc6fd7756e1df12d487e1bcfce03b73f))
+* **deps:** pin pnpm/action-setup action to a7487c7 ([#128](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/128)) ([5beba83](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/5beba833dd6de0eb75b3af3b0bdb94e96d0e9699))
+* **deps:** update actions/setup-node digest to cdca736 ([#130](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/130)) ([ae8987c](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/ae8987cde862b587953025ddd1d9606e099f3a67))
+* **deps:** update dependency @graphql-tools/schema to v10.0.23 ([#131](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/131)) ([2455517](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/2455517f501934fe431572e304ea8a034838d0e1))
+* **deps:** update dependency @typescript-eslint/parser to v8.29.0 ([#132](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/132)) ([ddf4fc7](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/ddf4fc720020a0725edc43bee19a9903fe217359))
+* **deps:** update dependency eslint to v9.23.0 ([#133](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/133)) ([0ef36d5](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/0ef36d56c360bf3787386613ef06dee6cc51e584))
+* **deps:** update dependency eslint to v9.24.0 ([#139](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/139)) ([e4f9052](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/e4f9052a7d74d6b9abb46f8b807b8a90f5d50f5e))
+* **deps:** update dependency eslint-config-prettier to v10.1.1 ([#134](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/134)) ([dcd3bd0](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/dcd3bd04b2b79a5019e1ae1f30ea1ceae6e16166))
+* **deps:** update dependency ts-jest to v29.3.1 ([#135](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/135)) ([11c96b6](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/11c96b6977607c4ab86c5226ef57e3e65bb6bcd0))
+* **deps:** update dependency typescript to v5.8.3 ([#140](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/140)) ([d934ea4](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/d934ea4bfb38e325258fb7d80de48c2bc6c5dc45))
+* **deps:** update node.js to v23.11.0 ([#136](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/136)) ([8bc3aa8](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/8bc3aa86a75b8624cea6a5dcfba7ad0a39c0a14e))
+* **deps:** update pnpm to v10.7.1 ([#137](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/137)) ([e72d54d](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/e72d54d6061007649234cc452884df169ec6ff40))
+* **deps:** update vitest monorepo to v3.1.1 ([#138](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/138)) ([8e9a57d](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/8e9a57d064669b6b4455852159b0b1e6d8afa79b))
+
 ## [2.0.0](https://github.com/apollo-server-integrations/apollo-server-integration-h3/compare/v1.2.1...v2.0.0) (2025-03-19)
 
 ### ⚠ BREAKING CHANGES
