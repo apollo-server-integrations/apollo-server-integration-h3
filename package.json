@@ -58,7 +58,7 @@
     "@apollo/server-integration-testsuite": "4.12.2",
     "@graphql-tools/schema": "10.0.23",
     "@jest/globals": "29.7.0",
-    "@typescript-eslint/parser": "8.33.1",
+    "@typescript-eslint/parser": "8.35.1",
     "crossws": "0.3.4",
     "@vitest/coverage-v8": "3.2.4",
     "eslint": "9.28.0",
