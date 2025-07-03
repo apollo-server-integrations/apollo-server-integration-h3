@@ -17,12 +17,8 @@ import {
   readBody,
   RequestHeaders,
 } from 'h3'
-export {
-  defineGraphqlWebSocket,
-  defineGraphqlWebSocketHandler,
-} from './websocket'
+import type { WithRequired } from '@apollo/utils.withrequired'
 
-type WithRequired<T, K extends keyof T> = T & Required<Pick<T, K>>
 export interface H3ContextFunctionArgument {
   event: H3Event
 }
