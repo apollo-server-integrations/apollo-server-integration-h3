@@ -31,8 +31,8 @@ importers:
         specifier: 3.2.4
         version: 3.2.4(vitest@3.2.4(@types/node@24.6.1)(jiti@2.6.0)(jsdom@25.0.1)(yaml@2.8.1))
       commit-and-tag-version:
-        specifier: 12.5.1
-        version: 12.5.1
+        specifier: 12.6.0
+        version: 12.6.0
       crossws:
         specifier: 0.3.4
         version: 0.3.4
@@ -1598,8 +1598,8 @@ packages:
     resolution: {integrity: sha512-yPVavfyCcRhmorC7rWlkHn15b4wDVgVmBA7kV4QVBsF7kv/9TKJAbAXVTxvTnwP8HHKjRCJDClKbciiYS7p0DQ==}
     engines: {node: '>=16'}
 
-  commit-and-tag-version@12.5.1:
-    resolution: {integrity: sha512-EA+0zGai6pPfpD1/hwuRDGMLZe00V4b1PtIFtZw5ra/PCan3kxOMVTnj/VuMTNgmH6lwbptObxVDYYzWXzndsg==}
+  commit-and-tag-version@12.6.0:
+    resolution: {integrity: sha512-/x9+InrMz4G0GzDh1/ddrCsq4SKxRPS3vO5ShhZFG9EEr0GCZ3IrQPFpnBEgnIzm1XqwbkMYpIxFml7HuVs6mQ==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -6018,7 +6018,7 @@ snapshots:
 
   commander@11.1.0: {}
 
-  commit-and-tag-version@12.5.1:
+  commit-and-tag-version@12.6.0:
     dependencies:
       chalk: 2.4.2
       conventional-changelog: 4.0.0
