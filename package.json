@@ -75,7 +75,7 @@
     "commit-and-tag-version": "12.6.0",
     "ts-jest": "29.4.4",
     "typescript": "5.9.3",
-    "unbuild": "3.5.0",
+    "unbuild": "3.6.1",
     "vitest": "3.2.4"
   },
   "packageManager": "pnpm@10.12.4",
