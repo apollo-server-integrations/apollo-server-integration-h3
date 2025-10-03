@@ -39,7 +39,7 @@
     "release": "pnpm test && standard-version && git push --follow-tags && pnpm publish"
   },
   "peerDependencies": {
-    "@apollo/server": "^4.1.1",
+    "@apollo/server": "^4.1.1 || ^5.0.0",
     "h3": "^1.11.0",
     "graphql": "^16.0.0",
     "graphql-ws": "^5.0.0 || ^6.0.0",
@@ -54,8 +54,8 @@
     "@apollo/utils.withrequired": "3.0.0"
   },
   "devDependencies": {
-    "@apollo/server": "4.12.2",
-    "@apollo/server-integration-testsuite": "4.12.2",
+    "@apollo/server": "5.0.0",
+    "@apollo/server-integration-testsuite": "5.0.0",
     "@graphql-tools/schema": "10.0.25",
     "@jest/globals": "29.7.0",
     "@typescript-eslint/parser": "8.45.0",
