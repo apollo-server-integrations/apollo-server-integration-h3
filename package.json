@@ -68,7 +68,7 @@
     "graphql": "16.11.0",
     "graphql-subscriptions": "3.0.0",
     "graphql-ws": "6.0.6",
-    "h3": "1.15.3",
+    "h3": "1.15.4",
     "jest": "30.2.0",
     "listhen": "1.9.0",
     "prettier": "3.6.2",
