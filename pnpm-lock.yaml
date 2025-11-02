@@ -13,11 +13,11 @@ importers:
         version: 3.0.0
     devDependencies:
       '@apollo/server':
-        specifier: 5.0.0
-        version: 5.0.0(graphql@16.11.0)
+        specifier: 5.1.0
+        version: 5.1.0(graphql@16.11.0)
       '@apollo/server-integration-testsuite':
-        specifier: 5.0.0
-        version: 5.0.0(@jest/globals@30.2.0)(graphql-ws@6.0.6(crossws@0.3.4)(graphql@16.11.0)(ws@8.18.3))(graphql@16.11.0)(jest@30.2.0(@types/node@24.9.2))
+        specifier: 5.1.0
+        version: 5.1.0(@jest/globals@30.2.0)(graphql-ws@6.0.6(crossws@0.3.4)(graphql@16.11.0)(ws@8.18.3))(graphql@16.11.0)(jest@30.2.0(@types/node@24.9.2))
       '@graphql-tools/schema':
         specifier: 10.0.26
         version: 10.0.26(graphql@16.11.0)
@@ -120,16 +120,16 @@ packages:
     peerDependencies:
       graphql: 14.x || 15.x || 16.x
 
-  '@apollo/server-integration-testsuite@5.0.0':
-    resolution: {integrity: sha512-Ks3PL8vp0gdffBBXpOcdqw1EzVUs28q9ltIfqsTo1gv8d1u/3G+sEgE61MmHnJcexVbQMqqcoT8sKc5lqXNqEA==}
+  '@apollo/server-integration-testsuite@5.1.0':
+    resolution: {integrity: sha512-8GJXQjmyV+KZNsClvYPi9nKoPPGiDsgoohmfJnh/wjSFWt7p+pkDWF89JUP4TJWQ7ctJ+cysY5cV7rjCOd7Y0w==}
     engines: {node: '>=20'}
     peerDependencies:
       '@jest/globals': 29.x || 30.x
       graphql: ^16.11.0
       jest: 29.x || 30.x
 
-  '@apollo/server@5.0.0':
-    resolution: {integrity: sha512-PHopOm7pr69k7eDJvCBU4cZy9Z19qyCFKB9/luLnf2YCatu2WOYhoQPNr3dAoe//xv0RZFhxXbRcnK6IXIP7Nw==}
+  '@apollo/server@5.1.0':
+    resolution: {integrity: sha512-azqwwmKp23TMFQkjE66622sdY2Ao9d+LrebW++b3rFCNxU6XAl/vRwInOh9ejNgShDQzVS+bdCIFQnH9+r+N1A==}
     engines: {node: '>=20'}
     peerDependencies:
       graphql: ^16.11.0
@@ -4474,11 +4474,11 @@ snapshots:
       '@apollo/utils.logger': 3.0.0
       graphql: 16.11.0
 
-  '@apollo/server-integration-testsuite@5.0.0(@jest/globals@30.2.0)(graphql-ws@6.0.6(crossws@0.3.4)(graphql@16.11.0)(ws@8.18.3))(graphql@16.11.0)(jest@30.2.0(@types/node@24.9.2))':
+  '@apollo/server-integration-testsuite@5.1.0(@jest/globals@30.2.0)(graphql-ws@6.0.6(crossws@0.3.4)(graphql@16.11.0)(ws@8.18.3))(graphql@16.11.0)(jest@30.2.0(@types/node@24.9.2))':
     dependencies:
       '@apollo/cache-control-types': 1.0.3(graphql@16.11.0)
       '@apollo/client': 3.14.0(graphql-ws@6.0.6(crossws@0.3.4)(graphql@16.11.0)(ws@8.18.3))(graphql@16.11.0)
-      '@apollo/server': 5.0.0(graphql@16.11.0)
+      '@apollo/server': 5.1.0(graphql@16.11.0)
       '@apollo/usage-reporting-protobuf': 4.1.1
       '@apollo/utils.createhash': 3.0.1
       '@apollo/utils.keyvaluecache': 4.0.0
@@ -4499,7 +4499,7 @@ snapshots:
       - subscriptions-transport-ws
       - supports-color
 
-  '@apollo/server@5.0.0(graphql@16.11.0)':
+  '@apollo/server@5.1.0(graphql@16.11.0)':
     dependencies:
       '@apollo/cache-control-types': 1.0.3(graphql@16.11.0)
       '@apollo/server-gateway-interface': 2.0.0(graphql@16.11.0)
