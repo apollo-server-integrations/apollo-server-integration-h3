@@ -59,7 +59,7 @@
     "@graphql-tools/schema": "10.0.30",
     "@jest/globals": "30.2.0",
     "@typescript-eslint/parser": "8.48.1",
-    "@vitest/coverage-v8": "4.0.14",
+    "@vitest/coverage-v8": "4.0.15",
     "commit-and-tag-version": "12.6.1",
     "crossws": "0.3.5",
     "eslint": "9.39.1",
@@ -76,7 +76,7 @@
     "ts-jest": "29.4.6",
     "typescript": "5.9.3",
     "unbuild": "3.6.1",
-    "vitest": "4.0.14"
+    "vitest": "4.0.15"
   },
   "packageManager": "pnpm@10.24.0",
   "engines": {
