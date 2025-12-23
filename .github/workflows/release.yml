@@ -4,6 +4,7 @@ on:
       - main
 name: release
 permissions:
+  id-token: write
   contents: write
   pull-requests: write
 jobs:
@@ -64,9 +65,5 @@ jobs:
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install
-      - name: Config npm
-        run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Publish to npm
         run: pnpm publish --access public --no-git-checks
