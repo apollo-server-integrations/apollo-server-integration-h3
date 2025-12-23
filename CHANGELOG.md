@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.0.2](https://github.com/apollo-server-integrations/apollo-server-integration-h3/compare/v2.0.1...v2.0.2) (2025-12-23)
+
+### 🧹 Miscellaneous
+
+- use trusted publishing ([#244](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/244)) ([6926ee6](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/6926ee6fd40a6e8fc265c8a9f4a90129710e491c))
+
 ## [2.0.1](https://github.com/apollo-server-integrations/apollo-server-integration-h3/compare/v2.0.0...v2.0.1) (2025-12-23)
 
 ### 🧹 Miscellaneous
