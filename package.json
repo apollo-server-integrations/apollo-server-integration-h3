@@ -2,7 +2,10 @@
   "name": "@as-integrations/h3",
   "version": "2.0.2",
   "description": "An Apollo Server integration for use with h3 or Nuxt",
-  "repository": "github:apollo-server-integrations/apollo-server-integration-h3",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apollo-server-integrations/apollo-server-integration-h3.git"
+  },
   "license": "MIT",
   "sideEffects": false,
   "type": "module",
