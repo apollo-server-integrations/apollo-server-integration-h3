@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.0.3](https://github.com/apollo-server-integrations/apollo-server-integration-h3/compare/v2.0.2...v2.0.3) (2026-02-01)
+
+
+### 🧹 Miscellaneous
+
+* **deps:** lock file maintenance ([#256](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/256)) ([72c95ec](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/72c95ecf54a8c989af8fa97d6ed60320340dd436))
+* **deps:** update codecov/codecov-action action to v5.5.2 ([#246](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/246)) ([447dd43](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/447dd43f25d18bbd51ece4417e788205a9f5aa84))
+* **deps:** update dependency @typescript-eslint/parser to v8.51.0 ([#251](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/251)) ([0bceb91](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/0bceb91d3e9718e3432312d7ad0ec66fca4daba8))
+* **deps:** update dependency eslint to v9.39.2 ([#247](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/247)) ([4b8b4cf](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/4b8b4cf837a8eb116193a9824e360aeaed3942bd))
+* **deps:** update dependency prettier to v3.7.4 ([#249](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/249)) ([294a3bc](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/294a3bc9a585d896d6c5d6ffea20659df026643c))
+* **deps:** update pnpm to v10.26.2 ([#252](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/252)) ([e8039b3](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/e8039b3c3fe7f964795b0a67ba5af447efd9d079))
+* **deps:** update pnpm to v10.27.0 ([#253](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/253)) ([591671e](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/591671e1489feb90f66d8a30b7a2aa39e82fb0c6))
+* **deps:** update vitest monorepo to v4.0.16 ([#250](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/250)) ([1437b47](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/1437b47e4013be28aad891672f9eb16f654673a9))
+
 ## [2.0.2](https://github.com/apollo-server-integrations/apollo-server-integration-h3/compare/v2.0.1...v2.0.2) (2025-12-23)
 
 ### 🧹 Miscellaneous
