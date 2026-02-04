@@ -58,7 +58,6 @@ export function startServerAndCreateH3Handler<TContext extends BaseContext>(
       // https://github.com/apollographql/apollo-server/blob/fa82c1d5299c4803f9ef8ae7fa2e367eadd8c0e6/packages/server/src/runHttpQuery.ts#L182-L192
       if (isMethod(event, 'OPTIONS')) {
         // send 204 response
-        // eslint-disable-next-line unicorn/no-null
         return null
       }
 
