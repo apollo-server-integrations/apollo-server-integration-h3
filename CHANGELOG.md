@@ -1,5 +1,31 @@
 # Changelog
 
+## [2.0.3](https://github.com/apollo-server-integrations/apollo-server-integration-h3/compare/v2.0.2...v2.0.3) (2026-02-04)
+
+
+### 🧹 Miscellaneous
+
+* **deps:** lock file maintenance ([#256](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/256)) ([72c95ec](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/72c95ecf54a8c989af8fa97d6ed60320340dd436))
+* **deps:** pin dependency node to 24.13.0 ([#268](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/268)) ([bf71f21](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/bf71f21f49b760ee4b21703f6e77c7d2e10245ae))
+* **deps:** update actions/checkout action to v6.0.2 ([#257](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/257)) ([6f2a7d1](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/6f2a7d1c8ed4c586363b6e44b6610cc410e3749d))
+* **deps:** update actions/setup-node action to v6.2.0 ([#262](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/262)) ([c9469a3](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/c9469a30fca6cf4aa0a99d4003594851e86f710d))
+* **deps:** update apollo graphql packages to v5.3.0 ([#263](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/263)) ([1e588fa](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/1e588fa9b87ad65b7f81638bd01029ee8383ba6b))
+* **deps:** update codecov/codecov-action action to v5.5.2 ([#246](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/246)) ([447dd43](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/447dd43f25d18bbd51ece4417e788205a9f5aa84))
+* **deps:** update dependency @graphql-tools/schema to v10.0.31 ([#258](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/258)) ([a055be5](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/a055be587f759eb918dc9826fc5cd3b20372dd17))
+* **deps:** update dependency @typescript-eslint/parser to v8.51.0 ([#251](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/251)) ([0bceb91](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/0bceb91d3e9718e3432312d7ad0ec66fca4daba8))
+* **deps:** update dependency @typescript-eslint/parser to v8.54.0 ([#264](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/264)) ([de0ade6](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/de0ade6524e47f51c85cc0a7b2d401c169ba1d43))
+* **deps:** update dependency eslint to v9.39.2 ([#247](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/247)) ([4b8b4cf](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/4b8b4cf837a8eb116193a9824e360aeaed3942bd))
+* **deps:** update dependency eslint-config-unjs to v0.6.2 ([#254](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/254)) ([fafa9d8](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/fafa9d8eead01be5cc5d4efa43369fab0d7da674))
+* **deps:** update dependency graphql-ws to v6.0.7 ([#259](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/259)) ([2f00099](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/2f000995a1667040810705d01b88a3ab0ddd4b7f))
+* **deps:** update dependency h3 to v1.15.5 ([#260](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/260)) ([2e79833](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/2e7983358bb6c65c7f6b0fe6ab99a905917c1575))
+* **deps:** update dependency prettier to v3.7.4 ([#249](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/249)) ([294a3bc](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/294a3bc9a585d896d6c5d6ffea20659df026643c))
+* **deps:** update dependency prettier to v3.8.1 ([#265](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/265)) ([75421e7](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/75421e7efcc8e6fd18105f3e311b508fe3b92e29))
+* **deps:** update pnpm to v10.26.2 ([#252](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/252)) ([e8039b3](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/e8039b3c3fe7f964795b0a67ba5af447efd9d079))
+* **deps:** update pnpm to v10.27.0 ([#253](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/253)) ([591671e](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/591671e1489feb90f66d8a30b7a2aa39e82fb0c6))
+* **deps:** update pnpm to v10.28.2 ([#266](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/266)) ([237b9f6](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/237b9f6f3f45c110e77a7c0053758f43df8fd519))
+* **deps:** update vitest monorepo to v4.0.16 ([#250](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/250)) ([1437b47](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/1437b47e4013be28aad891672f9eb16f654673a9))
+* **deps:** update vitest monorepo to v4.0.18 ([#261](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/261)) ([da7ec05](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/da7ec05ec4d3c247c8bca567f312349be3c639fb))
+
 ## [2.0.2](https://github.com/apollo-server-integrations/apollo-server-integration-h3/compare/v2.0.1...v2.0.2) (2025-12-23)
 
 ### 🧹 Miscellaneous
