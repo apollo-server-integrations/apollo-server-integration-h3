@@ -70,7 +70,7 @@ jobs:
           ## version in `package.json` as that would introduce
           ## a change to the package itself
           # node-version-file: package.json
-          node-version: 24
+          node-version: 24.13.0
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install
