@@ -54,6 +54,10 @@ jobs:
   publish_npm:
     name: Publish to npm
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      id-token: write
     needs: [release-pr]
     if: needs.release-pr.outputs.release_created
     steps:
@@ -61,7 +65,12 @@ jobs:
       - run: corepack enable
       - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
         with:
-          node-version-file: package.json
+          ## we need at least npm 24 to use OIDC publishing
+          ## at the same time we don't want to bump the node
+          ## version in `package.json` as that would introduce
+          ## a change to the package itself
+          # node-version-file: package.json
+          node-version: 24
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install
