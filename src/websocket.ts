@@ -5,12 +5,7 @@ import {
   ServerOptions,
   ConnectionInitMessage,
 } from 'graphql-ws'
-import {
-  defineWebSocket,
-  defineWebSocketHandler,
-  EventHandler,
-  EventHandlerRequest,
-} from 'h3'
+import { defineWebSocket, defineWebSocketHandler, EventHandler, EventHandlerRequest } from 'h3'
 // TODO: Import from h3 once it's exposed there
 // Then also remove the explicit reference to crossws as a dependency in package.json
 // https://github.com/unjs/h3/issues/716
@@ -77,7 +72,8 @@ export function defineGraphqlWebSocket<
           },
           onMessage: (cb) => (client.handleMessage = cb),
         },
-        { peer } as Extra & Partial<E>,
+        // @ts-expect-error: Inconsistent types
+        { peer },
       )
       peers.set(peer, client)
     },
@@ -89,9 +85,7 @@ export function defineGraphqlWebSocket<
     close(peer, details) {
       const client = peers.get(peer)
       if (!client) throw new Error('Closing a missing client')
-      const upgradeProtocol = peer.request.headers?.get(
-        'Sec-WebSocket-Protocol',
-      )
+      const upgradeProtocol = peer.request.headers?.get('Sec-WebSocket-Protocol')
       if (
         details.code === CloseCode.SubprotocolNotAcceptable &&
         upgradeProtocol === DEPRECATED_GRAPHQL_WS_PROTOCOL

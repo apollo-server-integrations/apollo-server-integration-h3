@@ -53,7 +53,8 @@ defineIntegrationTestSuite(
 )
 
 // Stolen from apollo server integration tests
-export function urlForHttpServer(httpServer: Server): string {
+function urlForHttpServer(httpServer: Server): string {
+  // oxlint-disable-next-line typescript/no-unsafe-type-assertion
   const { address, port } = httpServer.address() as AddressInfo
 
   // Convert IPs which mean "any address" (IPv4 or IPv6) into localhost

@@ -1,9 +1,4 @@
-import type {
-  ApolloServer,
-  BaseContext,
-  ContextFunction,
-  HTTPGraphQLRequest,
-} from '@apollo/server'
+import type { ApolloServer, BaseContext, ContextFunction, HTTPGraphQLRequest } from '@apollo/server'
 import { HeaderMap } from '@apollo/server'
 import { Hooks } from 'crossws'
 import {
@@ -28,8 +23,10 @@ export interface H3HandlerOptions<TContext extends BaseContext> {
   websocket?: Partial<Hooks>
 }
 
+const defaultContext: ContextFunction<[H3ContextFunctionArgument], any> = () => Promise.resolve({})
+
 export function startServerAndCreateH3Handler(
-  server: ApolloServer<BaseContext>,
+  server: ApolloServer,
   options?: H3HandlerOptions<BaseContext>,
 ): EventHandler
 export function startServerAndCreateH3Handler<TContext extends BaseContext>(
@@ -42,15 +39,8 @@ export function startServerAndCreateH3Handler<TContext extends BaseContext>(
 ): EventHandler {
   server.startInBackgroundHandlingStartupErrorsByLoggingAndFailingAllRequests()
 
-  const defaultContext: ContextFunction<
-    [H3ContextFunctionArgument],
-    any
-  > = () => Promise.resolve({})
-
-  const contextFunction: ContextFunction<
-    [H3ContextFunctionArgument],
-    TContext
-  > = options?.context ?? defaultContext
+  const contextFunction: ContextFunction<[H3ContextFunctionArgument], TContext> =
+    options?.context ?? defaultContext
 
   return eventHandler({
     async handler(event) {
@@ -63,11 +53,10 @@ export function startServerAndCreateH3Handler<TContext extends BaseContext>(
 
       try {
         const graphqlRequest = await toGraphqlRequest(event)
-        const { body, headers, status } =
-          await server.executeHTTPGraphQLRequest({
-            httpGraphQLRequest: graphqlRequest,
-            context: () => contextFunction({ event }),
-          })
+        const { body, headers, status } = await server.executeHTTPGraphQLRequest({
+          httpGraphQLRequest: graphqlRequest,
+          context: () => contextFunction({ event }),
+        })
 
         if (body.kind === 'chunked') {
           throw new Error('Incremental delivery not implemented')

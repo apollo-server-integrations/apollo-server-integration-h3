@@ -2,13 +2,19 @@
   "name": "@as-integrations/h3",
   "version": "2.0.3",
   "description": "An Apollo Server integration for use with h3 or Nuxt",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/apollo-server-integrations/apollo-server-integration-h3.git"
   },
-  "license": "MIT",
-  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
   "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -21,37 +27,19 @@
       "require": "./dist/websocket.cjs"
     }
   },
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "dev:prepare": "unbuild --stub",
     "build": "unbuild",
     "test": "vitest dev",
     "test:integration": "jest",
     "test:types": "tsc --noEmit --skipLibCheck",
-    "lint": "pnpm lint:eslint && pnpm lint:prettier",
-    "lint:eslint": "eslint --report-unused-disable-directives .",
-    "lint:prettier": "prettier --check --ignore-path .gitignore . '!pnpm-lock.yaml'",
+    "lint": "pnpm lint:oxlint && pnpm lint:oxfmt",
+    "lint:oxlint": "oxlint --type-aware",
+    "lint:oxfmt": "oxfmt --check",
     "example:simple": "listhen -w --open ./examples/simple.ts",
     "example:websocket": "listhen -w --ws --open ./examples/websocket.ts",
     "prepack": "unbuild",
     "release": "pnpm test && standard-version && git push --follow-tags && pnpm publish"
-  },
-  "peerDependencies": {
-    "@apollo/server": "^4.1.1 || ^5.0.0",
-    "crossws": "^0.3.0",
-    "graphql": "^16.0.0",
-    "graphql-ws": "^5.0.0 || ^6.0.0",
-    "h3": "^1.11.0"
-  },
-  "peerDependenciesMeta": {
-    "graphql-ws": {
-      "optional": true
-    }
   },
   "dependencies": {
     "@apollo/utils.withrequired": "3.0.0"
@@ -65,24 +53,34 @@
     "@vitest/coverage-v8": "4.0.18",
     "commit-and-tag-version": "12.6.1",
     "crossws": "0.3.5",
-    "eslint": "9.39.2",
-    "eslint-config-prettier": "10.1.8",
-    "eslint-config-unjs": "0.6.2",
-    "eslint-plugin-unused-imports": "4.3.0",
     "graphql": "16.12.0",
     "graphql-subscriptions": "3.0.0",
     "graphql-ws": "6.0.7",
     "h3": "1.15.5",
     "jest": "30.2.0",
     "listhen": "1.9.0",
-    "prettier": "3.8.1",
+    "oxfmt": "0.35.0",
+    "oxlint": "1.50.0",
+    "oxlint-tsgolint": "0.15.0",
     "ts-jest": "29.4.6",
     "typescript": "5.9.3",
     "unbuild": "3.6.1",
     "vitest": "4.0.18"
   },
-  "packageManager": "pnpm@10.28.2",
+  "peerDependencies": {
+    "@apollo/server": "^4.1.1 || ^5.0.0",
+    "crossws": "^0.3.0",
+    "graphql": "^16.0.0",
+    "graphql-ws": "^5.0.0 || ^6.0.0",
+    "h3": "^1.11.0"
+  },
+  "peerDependenciesMeta": {
+    "graphql-ws": {
+      "optional": true
+    }
+  },
   "engines": {
     "node": ">=20.0.0"
-  }
+  },
+  "packageManager": "pnpm@10.28.2"
 }
