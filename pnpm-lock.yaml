@@ -13,11 +13,11 @@ importers:
         version: 3.0.0
     devDependencies:
       '@apollo/server':
-        specifier: 5.3.0
-        version: 5.3.0(graphql@16.12.0)
+        specifier: 5.4.0
+        version: 5.4.0(graphql@16.12.0)
       '@apollo/server-integration-testsuite':
-        specifier: 5.3.0
-        version: 5.3.0(@jest/globals@30.2.0)(graphql-ws@6.0.7(crossws@0.3.5)(graphql@16.12.0))(graphql@16.12.0)(jest@30.2.0(@types/node@25.3.3))
+        specifier: 5.4.0
+        version: 5.4.0(@jest/globals@30.2.0)(graphql-ws@6.0.7(crossws@0.3.5)(graphql@16.12.0))(graphql@16.12.0)(jest@30.2.0(@types/node@25.3.3))
       '@graphql-tools/schema':
         specifier: 10.0.31
         version: 10.0.31(graphql@16.12.0)
@@ -110,18 +110,17 @@ packages:
     peerDependencies:
       graphql: 14.x || 15.x || 16.x
 
-  '@apollo/server-integration-testsuite@5.3.0':
-    resolution: {integrity: sha512-7Q8H8U1Xg7YY2Y0TQ1rZ3/rLBsVctDBRc5r919yznSZUIXVCbRasDtDS275by7OTdEMQkcbdvWr/vnEkNS59XA==}
+  '@apollo/server-integration-testsuite@5.4.0':
+    resolution: {integrity: sha512-W/Cwp3E1asaayqC/SG20rlgavIpt2uLQn0VhCEmQozwfK2RjSt/exjq88jf87ihlAX5+GXIf+ZS32Mca7QmNeA==}
     engines: {node: '>=20'}
     peerDependencies:
       '@jest/globals': 29.x || 30.x
       graphql: ^16.11.0
       jest: 29.x || 30.x
 
-  '@apollo/server@5.3.0':
-    resolution: {integrity: sha512-ixchCUA38gjB7k1eGU2fra3eUhGyvFhMsKAr72+DaCRl9NhzXf3V4EVlVdiyS6qrR8xWQ+IdZlj2lb52dkqj+A==}
+  '@apollo/server@5.4.0':
+    resolution: {integrity: sha512-E0/2C5Rqp7bWCjaDh4NzYuEPDZ+dltTf2c0FI6GCKJA6GBetVferX3h1//1rS4+NxD36wrJsGGJK+xyT/M3ysg==}
     engines: {node: '>=20'}
-    deprecated: This version of Apollo Server is vulnerable to a denial of service (DoS) attack. Please update to @apollo/server 5.4.0 or later. For more details, see https://github.com/apollographql/apollo-server/security/advisories/GHSA-mp6q-xf9x-fwf7
     peerDependencies:
       graphql: ^16.11.0
 
@@ -2618,6 +2617,7 @@ packages:
   git-raw-commits@3.0.0:
     resolution: {integrity: sha512-b5OHmZ3vAgGrDn/X0kS+9qCfNKWe4K/jFnhwzVWWg0/k5eLa3060tZShrRg8Dja5kPc+YjS0Gc6y7cRr44Lpjw==}
     engines: {node: '>=14'}
+    deprecated: This package is no longer maintained. For the JavaScript API, please use @conventional-changelog/git-client instead.
     hasBin: true
 
   git-remote-origin-url@2.0.0:
@@ -2627,6 +2627,7 @@ packages:
   git-semver-tags@5.0.1:
     resolution: {integrity: sha512-hIvOeZwRbQ+7YEUmCkHqo8FOLQZCEn18yevLHADlFPZY02KJGsu5FZt9YW/lybfK2uhWFI7Qg/07LekJiTv7iA==}
     engines: {node: '>=14'}
+    deprecated: This package is no longer maintained. For the JavaScript API, please use @conventional-changelog/git-client instead.
     hasBin: true
 
   gitconfiglocal@1.0.0:
@@ -4529,11 +4530,11 @@ snapshots:
       '@apollo/utils.logger': 3.0.0
       graphql: 16.12.0
 
-  '@apollo/server-integration-testsuite@5.3.0(@jest/globals@30.2.0)(graphql-ws@6.0.7(crossws@0.3.5)(graphql@16.12.0))(graphql@16.12.0)(jest@30.2.0(@types/node@25.3.3))':
+  '@apollo/server-integration-testsuite@5.4.0(@jest/globals@30.2.0)(graphql-ws@6.0.7(crossws@0.3.5)(graphql@16.12.0))(graphql@16.12.0)(jest@30.2.0(@types/node@25.3.3))':
     dependencies:
       '@apollo/cache-control-types': 1.0.3(graphql@16.12.0)
       '@apollo/client': 3.14.0(graphql-ws@6.0.7(crossws@0.3.5)(graphql@16.12.0))(graphql@16.12.0)
-      '@apollo/server': 5.3.0(graphql@16.12.0)
+      '@apollo/server': 5.4.0(graphql@16.12.0)
       '@apollo/usage-reporting-protobuf': 4.1.1
       '@apollo/utils.createhash': 3.0.1
       '@apollo/utils.keyvaluecache': 4.0.0
@@ -4554,7 +4555,7 @@ snapshots:
       - subscriptions-transport-ws
       - supports-color
 
-  '@apollo/server@5.3.0(graphql@16.12.0)':
+  '@apollo/server@5.4.0(graphql@16.12.0)':
     dependencies:
       '@apollo/cache-control-types': 1.0.3(graphql@16.12.0)
       '@apollo/server-gateway-interface': 2.0.0(graphql@16.12.0)
@@ -4569,6 +4570,7 @@ snapshots:
       '@graphql-tools/schema': 10.0.31(graphql@16.12.0)
       async-retry: 1.3.3
       body-parser: 2.2.2
+      content-type: 1.0.5
       cors: 2.8.6
       finalhandler: 2.1.1
       graphql: 16.12.0
