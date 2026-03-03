@@ -1,14 +1,7 @@
 import type { ApolloServer, BaseContext, ContextFunction, HTTPGraphQLRequest } from '@apollo/server'
 import { HeaderMap } from '@apollo/server'
 import { Hooks } from 'crossws'
-import {
-  defineHandler,
-  EventHandler,
-  H3Event,
-  HTTPMethod,
-  isMethod,
-  RequestHeaders,
-} from 'h3'
+import { defineHandler, EventHandler, H3Event, HTTPMethod, isMethod, RequestHeaders } from 'h3'
 import type { WithRequired } from '@apollo/utils.withrequired'
 
 export interface H3ContextFunctionArgument {
