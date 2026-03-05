@@ -2,18 +2,17 @@
 
 ## [2.0.4](https://github.com/apollo-server-integrations/apollo-server-integration-h3/compare/v2.0.3...v2.0.4) (2026-03-05)
 
-
 ### 🧹 Miscellaneous
 
-* **deps:** lock file maintenance ([#271](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/271)) ([eba2c5b](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/eba2c5b62d524e411f2589b1f286ec91430caf78))
-* **deps:** update actions/setup-node action to v6.3.0 ([#278](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/278)) ([96395f5](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/96395f597841737e757cbfbba5742074f50c1d4d))
-* **deps:** update apollo graphql packages to v5.4.0 ([#272](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/272)) ([b74c21f](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/b74c21f819e96c252de7481807534533fcb6f456))
-* **deps:** update dependency @typescript-eslint/parser to v8.56.1 ([#273](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/273)) ([61ef7a3](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/61ef7a3ac0337ce6638f5a7e538d0205f57ab358))
-* **deps:** update dependency graphql to v16.13.0 ([#274](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/274)) ([662e5b1](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/662e5b10e44c7510119db01052da69d4a5e25d88))
-* **deps:** update dependency node to v24.14.0 ([#275](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/275)) ([4c85e27](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/4c85e27db216255c36cfad03088446edf8591965))
-* **deps:** update oxlint monorepo ([#279](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/279)) ([c9d9d0e](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/c9d9d0e252aa633b045b82598d37d087416e2b1d))
-* **deps:** update pnpm to v10.30.3 ([#276](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/276)) ([d5b4430](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/d5b44304f95159794738642c75d888a08bf0f87f))
-* migrate to oxlint and oxfmt ([#269](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/269)) ([1323770](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/1323770d65c4b9a9c288d5d1e2b31c616c32b9e3))
+- **deps:** lock file maintenance ([#271](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/271)) ([eba2c5b](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/eba2c5b62d524e411f2589b1f286ec91430caf78))
+- **deps:** update actions/setup-node action to v6.3.0 ([#278](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/278)) ([96395f5](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/96395f597841737e757cbfbba5742074f50c1d4d))
+- **deps:** update apollo graphql packages to v5.4.0 ([#272](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/272)) ([b74c21f](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/b74c21f819e96c252de7481807534533fcb6f456))
+- **deps:** update dependency @typescript-eslint/parser to v8.56.1 ([#273](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/273)) ([61ef7a3](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/61ef7a3ac0337ce6638f5a7e538d0205f57ab358))
+- **deps:** update dependency graphql to v16.13.0 ([#274](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/274)) ([662e5b1](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/662e5b10e44c7510119db01052da69d4a5e25d88))
+- **deps:** update dependency node to v24.14.0 ([#275](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/275)) ([4c85e27](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/4c85e27db216255c36cfad03088446edf8591965))
+- **deps:** update oxlint monorepo ([#279](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/279)) ([c9d9d0e](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/c9d9d0e252aa633b045b82598d37d087416e2b1d))
+- **deps:** update pnpm to v10.30.3 ([#276](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/276)) ([d5b4430](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/d5b44304f95159794738642c75d888a08bf0f87f))
+- migrate to oxlint and oxfmt ([#269](https://github.com/apollo-server-integrations/apollo-server-integration-h3/issues/269)) ([1323770](https://github.com/apollo-server-integrations/apollo-server-integration-h3/commit/1323770d65c4b9a9c288d5d1e2b31c616c32b9e3))
 
 ## [2.0.3](https://github.com/apollo-server-integrations/apollo-server-integration-h3/compare/v2.0.2...v2.0.3) (2026-02-04)
 
