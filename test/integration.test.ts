@@ -2,7 +2,7 @@ import {
   CreateServerForIntegrationTestsOptions,
   defineIntegrationTestSuite,
 } from '@apollo/server-integration-testsuite'
-import { createApp, toNodeListener } from 'h3'
+import { H3, toNodeHandler } from 'h3'
 import { ApolloServer, ApolloServerOptions, BaseContext } from '@apollo/server'
 import { startServerAndCreateH3Handler } from '../src'
 import { createServer, Server } from 'node:http'
@@ -20,7 +20,7 @@ defineIntegrationTestSuite(
     serverOptions: ApolloServerOptions<BaseContext>,
     testOptions?: CreateServerForIntegrationTestsOptions,
   ) => {
-    const app = createApp()
+    const app = new H3()
     const apollo = new ApolloServer({
       ...serverOptions,
     })
@@ -31,7 +31,7 @@ defineIntegrationTestSuite(
       }),
     )
 
-    const httpServer = createServer(toNodeListener(app))
+    const httpServer = createServer(toNodeHandler(app))
     await new Promise<void>((resolve) => {
       httpServer.listen({ port: 0 }, resolve)
     })
