@@ -64,8 +64,8 @@ importers:
         specifier: 0.15.0
         version: 0.15.0
       ts-jest:
-        specifier: 29.4.6
-        version: 29.4.6(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(jest-util@30.3.0)(jest@30.3.0(@types/node@25.5.0))(typescript@5.9.3)
+        specifier: 29.4.9
+        version: 29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(jest-util@30.3.0)(jest@30.3.0(@types/node@25.5.0))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -4147,8 +4147,8 @@ packages:
     resolution: {integrity: sha512-uivwYcQaxAucv1CzRp2n/QdYPo4ILf9VXgH19zEIjFx2EJufV16P0JtJVpYHy89DItG6Kwj2oIUjrcK5au+4tQ==}
     engines: {node: '>=8'}
 
-  ts-jest@29.4.6:
-    resolution: {integrity: sha512-fSpWtOO/1AjSNQguk43hb/JCo16oJDnMJf3CdEGNkqsEX3t0KX96xvyX1D7PfLCpVoKu4MfVrqUkFyblYoY4lA==}
+  ts-jest@29.4.9:
+    resolution: {integrity: sha512-LTb9496gYPMCqjeDLdPrKuXtncudeV1yRZnF4Wo5l3SFi0RYEnYRNgMrFIdg+FHvfzjCyQk1cLncWVqiSX+EvQ==}
     engines: {node: ^14.15.0 || ^16.10.0 || ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -4159,7 +4159,7 @@ packages:
       esbuild: '*'
       jest: ^29.0.0 || ^30.0.0
       jest-util: ^29.0.0 || ^30.0.0
-      typescript: '>=4.3 <6'
+      typescript: '>=4.3 <7'
     peerDependenciesMeta:
       '@babel/core':
         optional: true
@@ -8602,7 +8602,7 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  ts-jest@29.4.6(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(jest-util@30.3.0)(jest@30.3.0(@types/node@25.5.0))(typescript@5.9.3):
+  ts-jest@29.4.9(@babel/core@7.29.0)(@jest/transform@30.3.0)(@jest/types@30.3.0)(babel-jest@30.3.0(@babel/core@7.29.0))(jest-util@30.3.0)(jest@30.3.0(@types/node@25.5.0))(typescript@5.9.3):
     dependencies:
       bs-logger: 0.2.6
       fast-json-stable-stringify: 2.1.0
