@@ -52,8 +52,8 @@ importers:
         specifier: 30.3.0
         version: 30.3.0(@types/node@25.6.0)
       listhen:
-        specifier: 1.9.1
-        version: 1.9.1
+        specifier: 1.10.0
+        version: 1.10.0
       oxfmt:
         specifier: 0.47.0
         version: 0.47.0
@@ -3092,8 +3092,8 @@ packages:
   lines-and-columns@1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
 
-  listhen@1.9.1:
-    resolution: {integrity: sha512-4EhoyVcXEpNlY5HJRSQpH7Rba94M8N2JmI62ePjl0lrJKXSfG0F1FAgHGxBoz/T3pe41sUEwkIRRIcaUL0/Ofw==}
+  listhen@1.10.0:
+    resolution: {integrity: sha512-kfz4C0OrC6IpaVMtYDJtf6PFjurxe9NBBoDAh/o2p587INryFOO4DQ9OetbCdDrWFt1m1CJKvYrzkGsuPHw8nQ==}
     hasBin: true
 
   load-json-file@4.0.0:
@@ -7476,7 +7476,7 @@ snapshots:
 
   lines-and-columns@1.2.4: {}
 
-  listhen@1.9.1:
+  listhen@1.10.0:
     dependencies:
       '@parcel/watcher': 2.5.6
       '@parcel/watcher-wasm': 2.5.6
