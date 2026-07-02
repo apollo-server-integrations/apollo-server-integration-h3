@@ -47,7 +47,7 @@
   "devDependencies": {
     "@apollo/server": "5.5.1",
     "@apollo/server-integration-testsuite": "5.5.1",
-    "@graphql-tools/schema": "10.0.33",
+    "@graphql-tools/schema": "10.0.34",
     "@jest/globals": "30.4.1",
     "@typescript-eslint/parser": "8.60.1",
     "@vitest/coverage-v8": "4.1.8",
