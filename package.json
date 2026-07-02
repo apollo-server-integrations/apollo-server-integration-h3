@@ -50,7 +50,7 @@
     "@graphql-tools/schema": "10.0.34",
     "@jest/globals": "30.4.1",
     "@typescript-eslint/parser": "8.60.1",
-    "@vitest/coverage-v8": "4.1.8",
+    "@vitest/coverage-v8": "4.1.9",
     "commit-and-tag-version": "12.7.3",
     "crossws": "0.3.5",
     "graphql": "16.14.2",
@@ -65,7 +65,7 @@
     "ts-jest": "29.4.11",
     "typescript": "5.9.3",
     "unbuild": "3.6.1",
-    "vitest": "4.1.8"
+    "vitest": "4.1.9"
   },
   "peerDependencies": {
     "@apollo/server": "^4.1.1 || ^5.0.0",
