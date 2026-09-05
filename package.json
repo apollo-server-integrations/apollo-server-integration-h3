@@ -52,7 +52,7 @@
     "@typescript-eslint/parser": "8.69.0",
     "@vitest/coverage-v8": "4.1.11",
     "commit-and-tag-version": "13.1.2",
-    "crossws": "0.3.5",
+    "crossws": "0.4.12",
     "graphql": "17.0.2",
     "graphql-subscriptions": "3.0.0",
     "graphql-ws": "6.2.1",
@@ -69,7 +69,7 @@
   },
   "peerDependencies": {
     "@apollo/server": "^4.1.1 || ^5.0.0",
-    "crossws": "^0.3.0",
+    "crossws": "^0.3.0 || ^0.4.0",
     "graphql": "^16.0.0 || ^17.0.0",
     "graphql-ws": "^5.0.0 || ^6.0.0",
     "h3": "^1.11.0"
