@@ -112,4 +112,5 @@ async function normalizeBody(event: H3Event): Promise<unknown> {
   if (isMethod(event, PayloadMethods)) {
     return await readBody(event)
   }
+  return undefined
 }
