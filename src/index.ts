@@ -1,16 +1,16 @@
 import type { ApolloServer, BaseContext, ContextFunction, HTTPGraphQLRequest } from '@apollo/server'
 import { HeaderMap } from '@apollo/server'
-import { Hooks } from 'crossws'
+import { type Hooks } from 'crossws'
 import {
   eventHandler,
-  EventHandler,
+  type EventHandler,
   getHeaders,
   H3Event,
-  HTTPMethod,
+  type HTTPMethod,
   isMethod,
   setHeaders,
   readBody,
-  RequestHeaders,
+  type RequestHeaders,
 } from 'h3'
 import type { WithRequired } from '@apollo/utils.withrequired'
 
