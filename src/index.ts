@@ -111,5 +111,7 @@ async function normalizeBody(event: H3Event): Promise<unknown> {
   const PayloadMethods: HTTPMethod[] = ['PATCH', 'POST', 'PUT', 'DELETE']
   if (isMethod(event, PayloadMethods)) {
     return await readBody(event)
+  } else {
+    throw new Error(`Unexpected HTTP method: ${event.req.method}`)
   }
 }
