@@ -50,7 +50,7 @@
     "listhen": "1.10.1",
     "oxfmt": "0.66.0",
     "oxlint": "1.81.0",
-    "oxlint-tsgolint": "0.25.0",
+    "oxlint-tsgolint": "7.0.2001",
     "ts-jest": "29.4.12",
     "tsdown": "0.23.0",
     "typescript": "5.9.3",
