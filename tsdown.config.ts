@@ -2,7 +2,7 @@ import { defineConfig } from 'tsdown'
 
 export default defineConfig({
   dts: {
-    tsgo: true,
+    tsgo: {},
   },
   exports: true,
 })
