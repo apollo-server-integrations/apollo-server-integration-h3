@@ -52,7 +52,7 @@
     "oxlint-tsgolint": "7.0.2001",
     "ts-jest": "29.4.12",
     "tsdown": "0.23.0",
-    "typescript": "5.9.3",
+    "typescript": "7.0.2",
     "vitest": "4.1.11"
   },
   "peerDependencies": {
