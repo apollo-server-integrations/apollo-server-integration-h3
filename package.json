@@ -36,6 +36,8 @@
     "@apollo/server-integration-testsuite": "5.5.1",
     "@graphql-tools/schema": "10.1.0",
     "@jest/globals": "30.5.1",
+    "@swc/core": "^1.16.2",
+    "@swc/jest": "^0.2.39",
     "@types/node": "26.4.1",
     "@vitest/coverage-v8": "4.1.11",
     "commit-and-tag-version": "13.1.2",
@@ -50,7 +52,6 @@
     "oxfmt": "0.66.0",
     "oxlint": "1.81.0",
     "oxlint-tsgolint": "7.0.2001",
-    "ts-jest": "29.4.12",
     "tsdown": "0.23.0",
     "typescript": "7.0.2",
     "vitest": "4.1.11"
