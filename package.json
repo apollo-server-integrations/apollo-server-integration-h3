@@ -39,7 +39,7 @@
     "@swc/core": "1.16.12",
     "@swc/jest": "0.2.39",
     "@types/node": "26.6.3",
-    "@vitest/coverage-v8": "4.1.11",
+    "@vitest/coverage-v8": "5.0.2",
     "commit-and-tag-version": "13.2.1",
     "cross-env": "10.1.0",
     "crossws": "0.3.5",
@@ -54,7 +54,7 @@
     "oxlint-tsgolint": "7.0.2003",
     "tsdown": "0.23.0",
     "typescript": "7.0.2",
-    "vitest": "4.1.11"
+    "vitest": "5.0.2"
   },
   "peerDependencies": {
     "@apollo/server": "^4.1.1 || ^5.0.0",
