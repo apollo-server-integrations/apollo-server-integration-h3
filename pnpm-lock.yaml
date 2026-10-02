@@ -126,10 +126,10 @@ importers:
         specifier: 30.5.1
         version: 30.5.1(supports-color@8.1.1)
       '@swc/core':
-        specifier: ^1.16.2
+        specifier: 1.16.2
         version: 1.16.2
       '@swc/jest':
-        specifier: ^0.2.39
+        specifier: 0.2.39
         version: 0.2.39(@swc/core@1.16.2)
       '@types/node':
         specifier: 26.4.1
@@ -141,7 +141,7 @@ importers:
         specifier: 13.1.2
         version: 13.1.2(conventional-commits-filter@6.0.1)(conventional-commits-parser@7.1.2)
       cross-env:
-        specifier: ^10.1.0
+        specifier: 10.1.0
         version: 10.1.0
       crossws:
         specifier: 0.3.5
