@@ -38,7 +38,7 @@
     "@jest/globals": "30.5.2",
     "@swc/core": "1.16.2",
     "@swc/jest": "0.2.39",
-    "@types/node": "26.4.1",
+    "@types/node": "26.6.3",
     "@vitest/coverage-v8": "4.1.11",
     "commit-and-tag-version": "13.1.2",
     "cross-env": "10.1.0",
