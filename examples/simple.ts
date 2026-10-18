@@ -1,6 +1,6 @@
-import { createApp } from 'h3'
+import { H3 } from 'h3'
 import { ApolloServer } from '@apollo/server'
-import { startServerAndCreateH3Handler } from '../src'
+import { startServerAndCreateH3Handler } from '../src/index.ts'
 
 const typeDefs = `#graphql
   # This "Book" type defines the queryable fields for every book in our data source.
@@ -39,5 +39,7 @@ const apollo = new ApolloServer({
   resolvers,
 })
 
-export const app = createApp()
-app.use('.', startServerAndCreateH3Handler(apollo, {}))
+const app = new H3()
+app.all('/', startServerAndCreateH3Handler(apollo))
+
+export default app

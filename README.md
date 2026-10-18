@@ -47,7 +47,7 @@ export default startServerAndCreateH3Handler(apollo, {
 Create and configure an instance of Apollo Server as described in the [documentation](https://www.apollographql.com/docs/apollo-server/getting-started#step-6-create-an-instance-of-apolloserver) and then register it as a route handler in your `h3` application.
 
 ```js
-import { createApp } from 'h3'
+import { H3 } from 'h3'
 import { ApolloServer } from '@apollo/server'
 import { startServerAndCreateH3Handler } from '@as-integrations/h3'
 
@@ -55,8 +55,8 @@ const apollo = new ApolloServer({
   // Specify server options like schema and resolvers here
 })
 
-export const app = createApp()
-app.use(
+const app = new H3()
+app.all(
   '/api',
   startServerAndCreateH3Handler(apollo, {
     // Optional: Specify context
@@ -65,33 +65,36 @@ app.use(
     },
   }),
 )
+
+export default app
 ```
 
-Then run your h3 server as usual, e.g. with `npx --yes listhen -w --open ./app.ts`.
+Then run your h3 server as usual, e.g. with `npx h3 serve --entry ./app.ts`.
 Visit http://localhost:3000/api in your browser to access the Apollo Sandbox.
 
 ## Subscriptions with WebSockets
 
-This package also supports subscriptions over WebSockets. To enable this feature, you need to install the `graphql-ws` package:
+This package also supports subscriptions over WebSockets. To enable this feature, you need to install the `graphql-ws` and `crossws` packages:
 
 ```sh
 # npm
-npm install graphql-ws
+npm install graphql-ws crossws
 
 # yarn
-yarn add graphql-ws
+yarn add graphql-ws crossws
 
 # pnpm
-pnpm add graphql-ws
+pnpm add graphql-ws crossws
 ```
 
 Then you can add a WebSocket handler to your `h3` app using the `defineGraphqlWebSocketHandler` or `defineGraphqlWebSocket` functions from this package. Here is an example that combines the HTTP and WebSocket handlers in a single app.
 
 ```js
-import { createApp } from 'h3'
+import { H3, serve } from 'h3'
+import { plugin as ws } from 'crossws/server'
 import { ApolloServer } from '@apollo/server'
 import { startServerAndCreateH3Handler } from '@as-integrations/h3'
-import { defineGraphqlWebSocketHandler } from '@as-integrations/h3/websocket'
+import { defineGraphqlWebSocket } from '@as-integrations/h3/websocket'
 import { makeExecutableSchema } from '@graphql-tools/schema'
 
 // Define your schema and resolvers
@@ -101,13 +104,16 @@ const schema = makeExecutableSchema({ typeDefs, resolvers })
 
 const apollo = new ApolloServer({ schema })
 
-export const app = createApp()
-app.use(
+const app = new H3()
+app.all(
   '/api',
   startServerAndCreateH3Handler(apollo, {
-    websocket: defineGraphqlWebSocketHandler({ schema }),
+    websocket: defineGraphqlWebSocket({ schema }),
   }),
 )
+
+// WebSocket support in h3 is provided by crossws
+serve(app, { plugins: [ws({})] })
 ```
 
 Then you can connect to the WebSocket endpoint using the Apollo Sandbox or any other client that supports the `graphql-ws` protocol.
