@@ -1,7 +1,17 @@
 import type { ApolloServer, BaseContext, ContextFunction, HTTPGraphQLRequest } from '@apollo/server'
 import { HeaderMap } from '@apollo/server'
-import { Hooks } from 'crossws'
-import { defineHandler, EventHandler, H3Event, HTTPMethod, isMethod, RequestHeaders } from 'h3'
+import { type Hooks } from 'crossws'
+import {
+  eventHandler,
+  type EventHandler,
+  getHeaders,
+  H3Event,
+  type HTTPMethod,
+  isMethod,
+  setHeaders,
+  readBody,
+  type RequestHeaders,
+} from 'h3'
 import type { WithRequired } from '@apollo/utils.withrequired'
 
 export interface H3ContextFunctionArgument {
@@ -32,8 +42,8 @@ export function startServerAndCreateH3Handler<TContext extends BaseContext>(
   const contextFunction: ContextFunction<[H3ContextFunctionArgument], TContext> =
     options?.context ?? defaultContext
 
-  return defineHandler({
-    handler: async (event) => {
+  return eventHandler({
+    async handler(event) {
       // Apollo-server doesn't handle OPTIONS calls, so we have to do this on our own
       // https://github.com/apollographql/apollo-server/blob/fa82c1d5299c4803f9ef8ae7fa2e367eadd8c0e6/packages/server/src/runHttpQuery.ts#L182-L192
       if (isMethod(event, 'OPTIONS')) {
@@ -52,15 +62,13 @@ export function startServerAndCreateH3Handler<TContext extends BaseContext>(
           throw new Error('Incremental delivery not implemented')
         }
 
-        for (const [key, value] of headers) {
-          event.res.headers.set(key, value)
-        }
-        event.res.status = status || 200
+        setHeaders(event, Object.fromEntries(headers))
+        event.res.statusCode = status || 200
         return body.string
       } catch (error) {
         if (error instanceof SyntaxError) {
           // This is what the apollo test suite expects
-          event.res.status = 400
+          event.res.statusCode = 400
           return error.message
         } else {
           throw error
@@ -74,7 +82,7 @@ export function startServerAndCreateH3Handler<TContext extends BaseContext>(
 async function toGraphqlRequest(event: H3Event): Promise<HTTPGraphQLRequest> {
   return {
     method: event.req.method || 'POST',
-    headers: normalizeHeaders(event.req.headers),
+    headers: normalizeHeaders(getHeaders(event)),
     search: normalizeQueryString(event.req.url),
     body: await normalizeBody(event),
   }
@@ -102,6 +110,7 @@ function normalizeQueryString(url: string | undefined): string {
 async function normalizeBody(event: H3Event): Promise<unknown> {
   const PayloadMethods: HTTPMethod[] = ['PATCH', 'POST', 'PUT', 'DELETE']
   if (isMethod(event, PayloadMethods)) {
-    return await event.req.json()
+    return await readBody(event)
   }
+  return undefined
 }

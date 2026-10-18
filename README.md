@@ -96,9 +96,7 @@ import { makeExecutableSchema } from '@graphql-tools/schema'
 
 // Define your schema and resolvers
 const typeDefs = `...`
-const resolvers = {
-  /*...*/
-}
+const resolvers = {/*...*/}
 const schema = makeExecutableSchema({ typeDefs, resolvers })
 
 const apollo = new ApolloServer({ schema })

@@ -13,14 +13,14 @@ jobs:
     outputs:
       release_created: ${{ steps.release.outputs.release_created }}
     steps:
-      - uses: googleapis/release-please-action@16a9c90856f42705d54a6fda1823352bdc62cf38 # v4.4.0
+      - uses: googleapis/release-please-action@45996ed1f6d02564a971a2fa1b5860e934307cf7 # v5.0.0
         id: release
         with:
           token: ${{ secrets.RELEASE_PR_TOKEN }}
 
       # Format changelog, workaround for https://github.com/google-github-actions/release-please-action/issues/542
       # Taken from https://github.com/remarkablemark/release-please-extra-files-demo/blob/master/.github/workflows/release-please.yml
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         if: ${{ steps.release.outputs.pr }}
         with:
           token: ${{ secrets.RELEASE_PR_TOKEN }}
@@ -46,7 +46,7 @@ jobs:
 
       - name: Push changes
         if: ${{ steps.release.outputs.pr }}
-        uses: ad-m/github-push-action@master
+        uses: ad-m/github-push-action@881a6320fdb16eb5318c5054f31c218aec2b324c # master
         with:
           github_token: ${{ secrets.RELEASE_PR_TOKEN }}
           branch: ${{ fromJson(steps.release.outputs.pr).headBranchName }}
@@ -61,16 +61,16 @@ jobs:
     needs: [release-pr]
     if: needs.release-pr.outputs.release_created
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - run: corepack enable
-      - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           ## we need at least npm 24 to use OIDC publishing
           ## at the same time we don't want to bump the node
           ## version in `package.json` as that would introduce
           ## a change to the package itself
           # node-version-file: package.json
-          node-version: 24.14.0
+          node-version: 24.21.0
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install

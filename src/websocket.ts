@@ -2,10 +2,15 @@ import {
   makeServer,
   DEPRECATED_GRAPHQL_WS_PROTOCOL,
   CloseCode,
-  ServerOptions,
-  ConnectionInitMessage,
+  type ServerOptions,
+  type ConnectionInitMessage,
 } from 'graphql-ws'
-import { defineWebSocket, defineWebSocketHandler, EventHandler, EventHandlerRequest } from 'h3'
+import {
+  defineWebSocket,
+  defineWebSocketHandler,
+  type EventHandler,
+  type EventHandlerRequest,
+} from 'h3'
 // TODO: Import from h3 once it's exposed there
 // Then also remove the explicit reference to crossws as a dependency in package.json
 // https://github.com/unjs/h3/issues/716
