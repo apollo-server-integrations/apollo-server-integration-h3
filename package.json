@@ -25,8 +25,8 @@
     "lint": "pnpm lint:oxlint && pnpm lint:oxfmt",
     "lint:oxlint": "oxlint --type-aware",
     "lint:oxfmt": "oxfmt --check",
-    "example:simple": "listhen -w --open ./examples/simple.ts",
-    "example:websocket": "listhen -w --ws --open ./examples/websocket.ts"
+    "example:simple": "h3 serve --entry ./examples/simple.ts",
+    "example:websocket": "h3 serve --entry ./examples/websocket.ts"
   },
   "dependencies": {
     "@apollo/utils.withrequired": "3.0.0"
@@ -42,13 +42,12 @@
     "@vitest/coverage-v8": "5.0.3",
     "commit-and-tag-version": "13.2.1",
     "cross-env": "10.1.0",
-    "crossws": "0.3.5",
+    "crossws": "0.4.15",
     "graphql": "17.0.2",
     "graphql-subscriptions": "3.0.0",
     "graphql-ws": "6.3.0",
-    "h3": "1.15.11",
+    "h3": "2.0.3",
     "jest": "30.5.2",
-    "listhen": "1.10.1",
     "oxfmt": "0.71.0",
     "oxlint": "1.86.0",
     "oxlint-tsgolint": "7.0.2003",
@@ -58,10 +57,9 @@
   },
   "peerDependencies": {
     "@apollo/server": "^4.1.1 || ^5.0.0",
-    "crossws": "^0.3.0",
     "graphql": "^16.0.0 || ^17.0.0",
-    "graphql-ws": "^5.0.0 || ^6.0.0",
-    "h3": "^1.11.0"
+    "graphql-ws": "^5.6.1 || ^6.0.0",
+    "h3": "^2.0.0"
   },
   "peerDependenciesMeta": {
     "graphql-ws": {
@@ -69,7 +67,7 @@
     }
   },
   "engines": {
-    "node": ">=20.0.0"
+    "node": ">=20.19.0"
   },
   "packageManager": "pnpm@12.8.2"
 }

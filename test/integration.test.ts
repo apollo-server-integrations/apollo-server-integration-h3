@@ -24,8 +24,8 @@ defineIntegrationTestSuite(
     const apollo = new ApolloServer({
       ...serverOptions,
     })
-    app.use(
-      '/',
+    app.all(
+      '/**',
       startServerAndCreateH3Handler(apollo, {
         context: testOptions?.context,
       }),
