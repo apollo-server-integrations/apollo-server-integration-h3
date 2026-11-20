@@ -2,7 +2,7 @@ import {
   CreateServerForIntegrationTestsOptions,
   defineIntegrationTestSuite,
 } from '@apollo/server-integration-testsuite'
-import { createApp, toNodeListener } from 'h3'
+import { H3, toNodeHandler } from 'h3'
 import { ApolloServer, ApolloServerOptions, BaseContext } from '@apollo/server'
 import { startServerAndCreateH3Handler } from '../src'
 import { createServer, Server } from 'node:http'
@@ -20,18 +20,18 @@ defineIntegrationTestSuite(
     serverOptions: ApolloServerOptions<BaseContext>,
     testOptions?: CreateServerForIntegrationTestsOptions,
   ) => {
-    const app = createApp()
+    const app = new H3()
     const apollo = new ApolloServer({
       ...serverOptions,
     })
-    app.use(
-      '/',
+    app.all(
+      '/**',
       startServerAndCreateH3Handler(apollo, {
         context: testOptions?.context,
       }),
     )
 
-    const httpServer = createServer(toNodeListener(app))
+    const httpServer = createServer(toNodeHandler(app))
     await new Promise<void>((resolve) => {
       httpServer.listen({ port: 0 }, resolve)
     })
@@ -53,7 +53,8 @@ defineIntegrationTestSuite(
 )
 
 // Stolen from apollo server integration tests
-export function urlForHttpServer(httpServer: Server): string {
+function urlForHttpServer(httpServer: Server): string {
+  // oxlint-disable-next-line typescript/no-unsafe-type-assertion
   const { address, port } = httpServer.address() as AddressInfo
 
   // Convert IPs which mean "any address" (IPv4 or IPv6) into localhost

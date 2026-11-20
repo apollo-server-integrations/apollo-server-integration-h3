@@ -14,8 +14,7 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "dbaeumer.vscode-eslint",
-        "esbenp.prettier-vscode",
+        "oxc.oxc-vscode",
         "ZixuanChen.vitest-explorer",
         "streetsidesoftware.code-spell-checker",
         "github.vscode-pull-request-github"

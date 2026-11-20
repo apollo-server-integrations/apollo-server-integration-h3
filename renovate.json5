@@ -21,4 +21,15 @@
   automergeStrategy: 'squash',
   // Pin all dependencies: https://docs.renovatebot.com/dependency-pinning/
   rangeStrategy: 'pin',
+
+  // Specific rules to override global settings
+  packageRules: [
+    {
+      // Prevent the bot from updating/pinning the "engines.node" field.
+      // Changes to supported Node versions should be a manual decision (breaking change).
+      matchPackageNames: ['node'],
+      matchDepTypes: ['engines'],
+      enabled: false,
+    },
+  ],
 }
