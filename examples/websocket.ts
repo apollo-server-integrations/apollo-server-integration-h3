@@ -2,9 +2,10 @@
 // https://github.com/apollographql/docs-examples/tree/main/apollo-server/v4/subscriptions-graphql-ws
 import { ApolloServer } from '@apollo/server'
 import { PubSub } from 'graphql-subscriptions'
-import { createApp, defineWebSocketHandler } from 'h3'
-import { startServerAndCreateH3Handler } from '../src'
-import { defineGraphqlWebSocket } from '../src/websocket'
+import { H3, defineWebSocketHandler } from 'h3'
+import { plugin as ws } from 'crossws/server'
+import { startServerAndCreateH3Handler } from '../src/index.ts'
+import { defineGraphqlWebSocket } from '../src/websocket.ts'
 import { makeExecutableSchema } from '@graphql-tools/schema'
 import { ApolloServerPluginLandingPageLocalDefault } from '@apollo/server/plugin/landingPage/default'
 
@@ -44,7 +45,7 @@ const schema = makeExecutableSchema({ typeDefs, resolvers })
 
 // Create an h3 app; we will attach the WebSocket
 // server and the ApolloServer to it.
-export const app = createApp()
+const app = new H3()
 
 // Set up ApolloServer.
 const apollo = new ApolloServer({
@@ -57,11 +58,8 @@ const apollo = new ApolloServer({
   ],
 })
 
-//app.use('/', startServerAndCreateH3Handler(apollo))
-app.use(
-  // TODO: For some reason it doesn't work with the root path
-  // see discussion at https://github.com/unjs/h3/issues/719
-  '/ws',
+app.all(
+  '/',
   startServerAndCreateH3Handler(apollo, {
     websocket: {
       ...defineGraphqlWebSocket({ schema }),
@@ -87,7 +85,7 @@ app.use(
 )
 
 // Alternatively, you can use the following to define only the WebSocket server without ApolloServer.
-app.use(
+app.get(
   '/_ws',
   defineWebSocketHandler({
     ...defineGraphqlWebSocket({ schema }),
@@ -106,3 +104,7 @@ function incrementNumber() {
 
 // Start incrementing
 incrementNumber()
+
+export default app
+// Enable WebSocket support in the server started by `h3 serve`
+export const plugins = [ws({})]

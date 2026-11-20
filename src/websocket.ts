@@ -2,6 +2,7 @@ import {
   makeServer,
   DEPRECATED_GRAPHQL_WS_PROTOCOL,
   CloseCode,
+  handleProtocols,
   type ServerOptions,
   type ConnectionInitMessage,
 } from 'graphql-ws'
@@ -10,11 +11,10 @@ import {
   defineWebSocketHandler,
   type EventHandler,
   type EventHandlerRequest,
+  type WebSocketHooks,
+  type WebSocketPeer,
+  type WebSocketResponse,
 } from 'h3'
-// TODO: Import from h3 once it's exposed there
-// Then also remove the explicit reference to crossws as a dependency in package.json
-// https://github.com/unjs/h3/issues/716
-import type { Hooks, Peer } from 'crossws'
 
 /**
  * The extra that will be put in the `Context`.
@@ -25,7 +25,7 @@ export interface Extra {
   /**
    * The underlying WebSocket peer.
    */
-  readonly peer: Peer
+  readonly peer: WebSocketPeer
 }
 
 /**
@@ -43,14 +43,21 @@ interface Client {
  *
  * Use this over {@link defineGraphqlWebSocketHandler} if you need more control over the WebSocket server or
  * if you want to add custom hooks (e.g. for authentication or logging).
+ * When overriding the `upgrade` hook, make sure to still accept the `graphql-transport-ws` subprotocol,
+ * e.g. by returning the result of the `upgrade` hook defined here.
  */
 export function defineGraphqlWebSocket<
   P extends ConnectionInitMessage['payload'] = ConnectionInitMessage['payload'],
   E extends Record<PropertyKey, unknown> = Record<PropertyKey, never>,
->(options: ServerOptions<P, Extra & Partial<E>>): Partial<Hooks> {
+>(options: ServerOptions<P, Extra & Partial<E>>): Partial<WebSocketHooks> {
   const server = makeServer(options)
-  const peers = new WeakMap<Peer, Client>()
+  const peers = new WeakMap<WebSocketPeer, Client>()
   return defineWebSocket({
+    upgrade(request) {
+      // crossws doesn't negotiate a subprotocol on its own, but graphql-ws clients require one
+      const protocol = handleProtocols(request.headers.get('Sec-WebSocket-Protocol') ?? '')
+      return protocol ? { protocol } : undefined
+    },
     open(peer) {
       const client: Client = {
         handleMessage: () => {
@@ -113,6 +120,6 @@ export async function defineGraphqlWebSocketHandler<
   E extends Record<PropertyKey, unknown> = Record<PropertyKey, never>,
 >(
   options: ServerOptions<P, Extra & Partial<E>>,
-): Promise<EventHandler<EventHandlerRequest, never>> {
+): Promise<EventHandler<EventHandlerRequest, WebSocketResponse>> {
   return defineWebSocketHandler(defineGraphqlWebSocket(options))
 }
